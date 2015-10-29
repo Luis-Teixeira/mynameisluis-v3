@@ -1,0 +1,24 @@
+.Header {
+
+  background-color: $gray-lighter;
+  @extend .padding-t-50;
+  @extend .padding-b-50;
+
+  .nav {
+    @extend .col-md-4;
+    @extend .pull-right;
+    @extend .font-cosmonaut;
+    @extend .text-right;
+    line-height: 45px;
+
+  }
+
+  .nav-link {
+    @extend .margin-l-20;
+  }
+
+  .logo {
+
+  }
+}
+

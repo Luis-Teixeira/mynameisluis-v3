@@ -1,0 +1,23 @@
+/******************************************************************
+Theme Name: My Name Is Luis V3
+Theme URI: none
+Description: React Theme
+Author: Luis Teixeira
+Author URI: http://www.mynameisluis.com
+Version: 0.0-alpha
+Tags: react, wp rest api
+
+License: WTFPL
+License URI: http://sam.zoy.org/wtfpl/
+Are You Serious? Yes.
+*/
+
+@import 'scss/AppVars';
+@import 'scss/Helpers';
+@import 'scss/Main';
+@import 'components/App';
+@import 'components/Header';
+@import 'components/AboutSectionHP';
+// @import 'components/Posts/Posts';
+// @import 'components/Post/Post';
+// @import 'components/SinglePost/SinglePost';

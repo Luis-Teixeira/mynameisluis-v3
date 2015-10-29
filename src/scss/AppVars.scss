@@ -1,0 +1,26 @@
+@import '../bootstrap/bootstrap-variables-override';
+@import '../bootstrap/bootstrap';
+
+@import '../fonts/cosmonaut';
+@import '../fonts/TisaOT';
+@import 'mixins/padding-margin';
+
+//VAR
+
+$secundary-color : #e24913;
+$font-cosmonaut : 'cosmonautbold';
+
+
+//AUX CLASS
+
+.secundaria-color {
+  color: $secundary-color;
+}
+
+.bg-secundary-color {
+  background-color: $secundary-color;
+}
+
+.font-cosmonaut {
+  font-family: 'cosmonautbold';
+}

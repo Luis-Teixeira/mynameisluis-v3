@@ -1,0 +1,13 @@
+.AboutSectionHP {
+  @extend .bg-gray-lighter,
+          .margin-b-40;
+
+
+  .the-content {
+    @extend .col-md-8,
+            .col-md-offset-2,
+            .padding-t-40,
+            .padding-b-90,
+            .text-center;
+  }
+}
