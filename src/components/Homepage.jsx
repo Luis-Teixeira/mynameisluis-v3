@@ -1,38 +1,44 @@
-// var React = require('react'),
-//     Posts = require('../Posts/Posts.jsx'),
-//     About = require('../AboutSectionHP/AboutSectionHP.jsx'),
-//     Facts = require('../Facts/Facts.jsx')
-// ;
+
+import React from 'react'
+import { State, Lifecycle, RouteContext } from 'react-router'
+import AboutHp from './AboutSectionHP.jsx'
+import Facts from './Facts.jsx'
+import Posts from './Posts.jsx'
 
 
-// var Homepage = React.createClass({
-
-//   render: function() {
-//     var currentPath = this.props.location.pathname.split("/")[2];
-//     //console.log(this.props.location.pathname.split("/")[2];);//.length > 2);
+// class Homepage extends React.Component {
+//   render() {
 //     return (
 //       <div>
-//         <About />
-//         <Posts children={this.props.children} currentPath={currentPath} />
+//         <AboutHp />
+//         <Posts children={this.props.children}/>
 //         <Facts />
 //       </div>
 //     );
 //   }
-// });
+// }
 
-import React from 'react';
-import AboutHp from './AboutSectionHP.jsx';
-import Facts from './Facts.jsx';
+// export default Homepage;
 
-class Homepage extends React.Component {
+
+// import React from 'react';
+
+const Homepage = React.createClass({
+
+  //mixins: [RouteContext],
+
   render() {
     return (
       <div>
         <AboutHp />
+        <Posts />
         <Facts />
+        <div >
+          {React.cloneElement(this.props.children || <div />, { key: 'key' })}
+        </div>
       </div>
     );
   }
-}
+});
 
-export default Homepage;
+module.exports = Homepage;

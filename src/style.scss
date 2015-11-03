@@ -19,5 +19,9 @@ Are You Serious? Yes.
 @import 'components/Header';
 @import 'components/AboutSectionHP';
 // @import 'components/Posts/Posts';
-// @import 'components/Post/Post';
+@import 'components/Post';
+@import 'components/ImageLoader';
+@import 'components/Facts';
 // @import 'components/SinglePost/SinglePost';
+
+@import 'scss/vendor/swiper';

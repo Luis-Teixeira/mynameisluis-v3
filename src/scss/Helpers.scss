@@ -31,6 +31,11 @@
   border-radius: 0;
 }
 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .no-border {
   border: 0;
 }
@@ -137,8 +142,14 @@
 
 // COLOR
 
+$color-white : #fff;
+
 .color-white {
-  color: #fff;
+  color: $color-white;
+}
+
+.bg-color-white {
+  background-color: $color-white;
 }
 
 .color-black {
@@ -245,5 +256,11 @@
 
 .transition-all,
 .animated {
-  transition: all 250ms;
+  transition: all 500ms;
+  .slower {
+    transition: all 750ms;
+  }
+  .faster {
+    transition: all 250ms;
+  }
 }

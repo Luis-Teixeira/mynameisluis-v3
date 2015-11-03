@@ -1,3 +1,16 @@
 body {
   font-weight: 200;
 }
+
+.lazy-load {
+  //transition: all 1s;
+  @extend .animated;
+  opacity: 0;
+  //transform: translateY(20px);
+
+  &.lazy-load-visible {
+    opacity: 1;
+    //transform: translateY(0px);
+  }
+}
+

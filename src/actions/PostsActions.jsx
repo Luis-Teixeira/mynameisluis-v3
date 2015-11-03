@@ -1,4 +1,4 @@
-var Reflux = require('reflux');
+import Reflux from 'reflux'
 
 var PostActions = Reflux.createActions([
         "getPost",       // called by button in TodoItem

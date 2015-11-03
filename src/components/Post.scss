@@ -1,0 +1,73 @@
+.Post {
+  height: 400px;
+  @extend .bg-gray-lighter,
+          .position-rel,
+          .animated,
+          .overflow-hidden,
+          .margin-b-30;
+  &:before {
+    content: '';
+    @extend .position-abs;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0);
+    z-index: 0;
+  }
+
+}
+
+.Post_init {
+  &:hover {
+    &:before {
+       background-color: rgba(0,0,0,.3);
+    }
+  }
+}
+
+.Post_link {
+  @extend .position-abs,
+          .color-white,
+          .animated,
+          .padding-l-20,
+          .padding-r-20,
+          .padding-t-15,
+          .padding-b-15,
+          .as-flex;
+
+  align-items: flex-end;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border: 2px solid $color-white;
+  opacity: 0;
+
+  a {
+    @extend .color-white,
+            .font-size-h3,
+            .text-uppercase;
+    //font-weight: 900;
+  }
+
+
+  &:hover {
+    // @extend .bg-color-white;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 0px 0px 35px #000;
+    transform: translateY(-5px);
+    a {
+      @extend .color-black;
+    }
+  }
+
+  .Post_init:hover &  {
+    opacity: 1;
+
+  }
+
+}
+
+

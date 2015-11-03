@@ -28,7 +28,7 @@
 //module.exports = Header;
 
 import React from 'react';
-import Link from 'react-router';
+import { Link } from 'react-router';
 
 class Header extends React.Component {
   render() {
@@ -36,11 +36,11 @@ class Header extends React.Component {
       <header className="Header">
         <div className="container">
           <div className="row">
-            <div  className="logo col-md-2">
+            <Link  to="/" className="logo col-md-2">
               <img src={appConfig.themeURL+"/images/logo.svg"} />
-            </div>
+            </Link>
             <nav className="nav">
-
+              <Link to={`/`} className="nav-link" activeClassName="active"> Home </Link>
             </nav>
           </div>
         </div>

@@ -1,0 +1,58 @@
+.Facts {
+  @extend .padding-t-20,
+          .margin-b-40,
+          .text-center;
+
+  .swiper-container {
+    @extend .col-md-8,
+            .col-md-offset-2,
+            .padding-0;
+
+    height: 200px;
+    transition: opacity 400ms;
+    opacity: 0;
+
+    &.fadein {
+      opacity: 1;
+    }
+  }
+
+  .cote {
+    //font-size: 20px;
+  }
+
+  &:before {
+    content: '';
+    width: 20%;
+    border-top: 1px solid $gray-light;
+    @extend .center,
+            .margin-b-40;
+
+  }
+}
+
+
+.who {
+  // @extend .col-md-6,
+  //         .col-md-offset-3;
+  @extend .as-flex,
+          .margin-t-20;
+  justify-content: center;
+}
+.who-avatar {
+  @extend .pull-left;
+  width: 50px;
+}
+
+.who-name {
+  @extend .pull-left,
+          .text-left,
+          .as-flex,
+          .margin-l-10,
+          .gray-light,
+          .font-size-small;
+
+  font-style: italic;
+  align-items: center;
+  height: 50px;
+}

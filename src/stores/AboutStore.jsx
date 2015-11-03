@@ -8,9 +8,8 @@ const localStorageKey = 'about',
 
 const AboutStore = Reflux.createStore({
 
-  fetchPage: function () {
-    var self = this;
-
+  fetchPage() {
+    let self = this;
     request
       .get( apiUrl + endPoint)
       .end( function( error, result ) {
@@ -18,9 +17,9 @@ const AboutStore = Reflux.createStore({
       });
   },
 
-  getInitialState: function() {
+  getInitialState() {
 
-    var loadedList = localStorage.getItem(localStorageKey);
+    let loadedList = localStorage.getItem(localStorageKey);
 
     //console.log('local (há? )->' , loadedList  );
     if (!loadedList || loadedList === 'undefined') {
@@ -28,8 +27,8 @@ const AboutStore = Reflux.createStore({
     } else {
       //this.trigger(this.page);
       //JUST FOR DEBUG
-      //this.fetchPage(); //
-      this.updateList(JSON.parse(loadedList));
+      this.fetchPage(); //
+      //this.updateList(JSON.parse(loadedList));
       //this.compareLatestsID();
     }
     //console.log('local else ->', this.page);
@@ -37,7 +36,7 @@ const AboutStore = Reflux.createStore({
 
   },
 
-  updateList: function(page){
+  updateList(page){
       localStorage.setItem(localStorageKey,JSON.stringify(page));
       // if we used a real database, we would likely do the below in a callback
       this.page = page;

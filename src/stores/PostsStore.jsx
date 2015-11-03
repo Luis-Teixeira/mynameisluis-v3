@@ -1,30 +1,26 @@
+import Reflux from 'reflux'
+import PostActions from '../actions/PostsActions.jsx'
+import request from 'superagent'
+import _ from 'lodash'
 
-var Reflux = require('reflux'),
-    PostActions = require('../actions/PostsActions/PostsActions.jsx'),
-    request = require( 'superagent' ),
-    _ = require('lodash');
-
-
-var localStorageKey = 'posts',
-    apiUrl = '/wp-json/wp/v2',
-    endPoint = '/posts';
-
+const localStorageKey = 'posts',
+      apiUrl = '/wp-json/wp/v2',
+      endPoint = '/portfolio';
 
 function getPostByKey(posts,postKey){
-    return _.find(posts, function(post) {
-        return post.slug === postKey;
-    });
+  return _.find(posts, function(post) {
+      return post.slug === postKey;
+  });
 }
-
 
 //http://wpapi.dev/wp-json/wp/v2/pages?filter[name]
 var PostsStore = Reflux.createStore ({
 
     listenables: [PostActions],
 
-    getInitialState: function() {
+    getInitialState(){
 
-      var loadedList = localStorage.getItem(localStorageKey);
+      let loadedList = localStorage.getItem(localStorageKey);
 
       //console.log('local (há? )->' , loadedList  );
       if (!loadedList || loadedList === 'undefined') {
@@ -40,16 +36,16 @@ var PostsStore = Reflux.createStore ({
     },
 
 
-    fetchPostDetailBySlug : function(postKey) {
-      var foundPost = getPostByKey(this.posts,postKey);
+    fetchPostDetailBySlug(postKey) {
+      let foundPost = getPostByKey(this.posts,postKey);
       if (!foundPost) {
           return;
       }
       return foundPost;
     },
 
-    fetchPosts: function () {
-      var self = this;
+    fetchPosts() {
+      let self = this;
 
       request
         .get( apiUrl + endPoint)
@@ -58,21 +54,21 @@ var PostsStore = Reflux.createStore ({
         });
     },
 
-    compareLatestsID: function () {
-      var self = this;
-      var loadedList = localStorage.getItem(localStorageKey);
-      var storedListLastID = JSON.parse(loadedList)[0].id;
+    compareLatestsID() {
+      let self = this;
+      let loadedList = localStorage.getItem(localStorageKey);
+      let storedListLastID = JSON.parse(loadedList)[0].id;
 
       request
         .get( apiUrl + endPoint + '?filter[posts_per_page]=1')
         .end( function( error, result ) {
-          var serverListLastID = JSON.parse( result.text )[0].id;
+          let serverListLastID = JSON.parse( result.text )[0].id;
           //(storedListLastID === serverListLastID) ? self.updateList(JSON.parse(loadedList)) : self.fetchPosts();
           self.fetchPosts();
         });
     },
 
-    updateList: function(posts){
+    updateList(posts){
         localStorage.setItem(localStorageKey,JSON.stringify(posts));
         // if we used a real database, we would likely do the below in a callback
         this.posts = posts;

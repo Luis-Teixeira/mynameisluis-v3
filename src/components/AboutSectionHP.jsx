@@ -48,7 +48,7 @@ const AboutSectionHP = React.createClass({
     return (
       <article key={key} className="AboutSectionHP">
         <div className="container ">
-          <div className="the-content  " dangerouslySetInnerHTML={{__html: content }} />
+          <div className="the-content" dangerouslySetInnerHTML={{__html: content }} />
         </div>
       </article>
     );

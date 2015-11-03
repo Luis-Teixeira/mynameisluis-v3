@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Luis-Teixeira/mynameisluis-v3"
+    "url": "git+https://github.com/Luis-Teixeira/mynameisluis-v3.git"
   },
   "author": "Luis Teixeira",
-  "license": "GNU General Public License v2 or later",
+  "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/Luis-Teixeira/mynameisluis-v3"
   },
-  "homepage": "",
+  "homepage": "https://github.com/Luis-Teixeira/mynameisluis-v3#readme",
   "devDependencies": {
     "babelify": "^6.3.0",
     "bootstrap-sass": "^3.3.5",
@@ -32,15 +32,21 @@
     "lodash": "^3.10.1",
     "react": "^0.13.3",
     "react-async": "^2.1.0",
-    "react-router": "^1.0.0-rc1",
+    "react-dom": "^0.14.1",
+    "react-idangerous-swiper": "0.0.1",
+    "react-lazy-load": "^1.0.5",
+    "react-router": "^1.0.0-rc4",
     "reactify": "^1.1.1",
     "reflux": "^0.2.12",
     "superagent": "^1.3.0",
+    "swiper": "^3.1.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.4.0"
   },
-  "dependencies": {
-    "lodash": "^3.10.1"
+  "description": "WP API Studie ==============",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
   }
 }
