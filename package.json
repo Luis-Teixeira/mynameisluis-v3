@@ -33,6 +33,7 @@
     "react": "^0.13.3",
     "react-async": "^2.1.0",
     "react-dom": "^0.14.1",
+    "react-helmet": "^2.1.1",
     "react-idangerous-swiper": "0.0.1",
     "react-lazy-load": "^1.0.5",
     "react-router": "^1.0.0-rc4",

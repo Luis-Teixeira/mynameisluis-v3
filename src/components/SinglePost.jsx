@@ -1,6 +1,7 @@
 import React from 'react'
 import PostsStore from '../stores/PostsStore.jsx'
 import { RouteHandler , Lifecycle , State ,RouteContext, History } from 'react-router'
+import Helmet from "react-helmet";
 
 
 const SinglePost = React.createClass({
@@ -59,9 +60,11 @@ const SinglePost = React.createClass({
   render() {
     let fetchedData = this.state.fetchedData;
     //console.log(fetchedData,this.props.params.postId);
-
     return (
-      <div>{fetchedData.title.rendered}</div>
+      <div>
+        <Helmet title={fetchedData.title.rendered+' | '+ appConfig.wordpressName} />
+        <div>{fetchedData.title.rendered}</div>
+      </div>
     );
   }
 });

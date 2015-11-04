@@ -44,7 +44,7 @@ class Post extends React.Component {
           <div className={classNames}>
             <ImageLoader imageSrc={acf.imagem_destaque.sizes.medium} onLoaded={this.imageLoaded(this)}/>
             <div className="Post_link ">
-              <Link to={`/post/${fetchedData.slug}`}> {fetchedData.title.rendered}</Link>
+              <Link to={`/portfolio/${fetchedData.slug}`}> {fetchedData.title.rendered}</Link>
             </div>
           </div>
         </article>

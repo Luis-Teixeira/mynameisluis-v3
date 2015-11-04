@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom'
 import ReactTransitionGroup from 'react/lib/ReactCSSTransitionGroup'
-//import PostStore from '../../stores/PostsStore.jsx';
+import createBrowserHistory from 'history/lib/createBrowserHistory'
 import { Router, Route, Link , Redirect, IndexRoute} from 'react-router'
 
 
@@ -10,7 +10,6 @@ import Homepage from './Homepage.jsx'
 import Footer from './Footer.jsx'
 import SinglePost from './SinglePost.jsx'
 
-import createBrowserHistory from 'history/lib/createBrowserHistory'
 
 const App = React.createClass({
 
@@ -28,12 +27,13 @@ const App = React.createClass({
   }
 });
 
+
 React.render((
-  <Router /*history={createBrowserHistory()}*/ >
+  <Router history={createBrowserHistory()} >
     <Redirect from="/" to="index" />
     <Route path="/" component={App} >
       <Route name="index" path="index" component={Homepage} >
-        <Route name="post" path="/post/:postId" component={SinglePost} />
+        <Route name="portfolio" path="/portfolio/:postId" component={SinglePost} />
       </Route>
     </Route>
   </Router>

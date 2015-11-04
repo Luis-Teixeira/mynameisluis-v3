@@ -1,13 +1,12 @@
 
 import React from 'react'
-import ReactTransitionGroup from 'react/lib/ReactCSSTransitionGroup'
 import Reflux from 'reflux'
 import { State } from 'react-router'
 import cx from 'classnames'
-import request from 'superagent'
-import GSAP from 'gsap'
-import _ from 'lodash'
-import LazyLoad from 'react-lazy-load'
+//import request from 'superagent'
+//import GSAP from 'gsap'
+//import _ from 'lodash'
+//import LazyLoad from 'react-lazy-load'
 import PostsStore from '../stores/PostsStore.jsx'
 import Post from './Post.jsx'
 

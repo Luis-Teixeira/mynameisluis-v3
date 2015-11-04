@@ -1,8 +1,11 @@
-<?php
-if ( is_front_page() ) {
-	//wp_redirect( get_permalink( 1 ));
-}
-?>
+<?php if ( is_front_page() ) {/*wp_redirect( get_permalink( 1 ));*/} ?>
+<script>
+  var appConfig  = {
+    themeURL : "<?php echo get_stylesheet_directory_uri(); ?>",
+    wordpressName: "<?php echo  bloginfo('name'); ?>"
+  };
+</script>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -10,11 +13,6 @@ if ( is_front_page() ) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-  <script>
-  var appConfig  = {
-    themeURL : "<?php echo get_stylesheet_directory_uri(); ?>"
-  };
-  </script>
 	<?php wp_head(); ?>
 </head>
 
@@ -24,8 +22,6 @@ if ( is_front_page() ) {
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
-
-
 
 			</main><!-- #main -->
 		</div><!-- #primary -->

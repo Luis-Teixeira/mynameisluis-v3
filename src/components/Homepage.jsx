@@ -4,6 +4,7 @@ import { State, Lifecycle, RouteContext } from 'react-router'
 import AboutHp from './AboutSectionHP.jsx'
 import Facts from './Facts.jsx'
 import Posts from './Posts.jsx'
+import Helmet from "react-helmet";
 
 
 // class Homepage extends React.Component {
@@ -24,12 +25,23 @@ import Posts from './Posts.jsx'
 // import React from 'react';
 
 const Homepage = React.createClass({
-
   //mixins: [RouteContext],
-
   render() {
     return (
       <div>
+
+        <Helmet
+          title={appConfig.wordpressName}
+          meta={[
+            {"name": "description", "content": "Helmet application"},
+            {"property": "og:type", "content": "article"}
+          ]}
+
+          link={[
+            {"rel": "canonical", "href": "http://mysite.com/example"},
+          ]}
+        />
+
         <AboutHp />
         <Posts />
         <Facts />
