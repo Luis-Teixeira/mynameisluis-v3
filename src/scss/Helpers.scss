@@ -60,6 +60,18 @@
   width: 100%;
 }
 
+.w75 {
+  width: 75%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w25 {
+  width: 25%;
+}
+
 // FONT
 .font-smoothing {
   -moz-osx-font-smoothing: grayscale;
@@ -81,6 +93,35 @@
 .font-bolder {
   font-weight: bolder;
 }
+
+.font-100 {
+  font-weight: 100;
+}
+.font-200 {
+  font-weight: 200;
+}
+.font-300 {
+  font-weight: 300;
+}
+.font-400 {
+  font-weight: 400;
+}
+.font-500 {
+  font-weight: 500;
+}
+.font-600 {
+  font-weight: 600;
+}
+.font-700 {
+  font-weight: 700;
+}
+.font-800 {
+  font-weight: 800;
+}
+.font-900 {
+  font-weight: 900;
+}
+
 
 .font-sans-serif {
   font-family: $font-family-sans-serif;
@@ -142,7 +183,8 @@
 
 // COLOR
 
-$color-white : #fff;
+$color-white: #fff;
+$color-black: #000;
 
 .color-white {
   color: $color-white;
@@ -153,7 +195,7 @@ $color-white : #fff;
 }
 
 .color-black {
-  color: #000;
+  color: $color-black;
 }
 
 .text-color {
@@ -263,4 +305,19 @@ $color-white : #fff;
   .faster {
     transition: all 250ms;
   }
+}
+
+.animated-super-slower {
+  transition: all 1500ms;
+}
+
+.animated-slower {
+  transition: all 750ms;
+}
+.animated-faster {
+  transition: all 250ms;
+}
+
+.animated-super-faster {
+  transition: all 100ms;
 }

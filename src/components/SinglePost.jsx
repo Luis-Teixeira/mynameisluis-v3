@@ -46,7 +46,7 @@ const SinglePost = React.createClass({
         self.state.isVisible = false;
         self.context.history.pushState(null, nextLocation.pathname);
         //self.context.history.transitionTo('/');
-      },2000)
+      },500)
       return false;
     }
     //return 'Your work is not saved! Are you sure you want to leave?'
@@ -61,10 +61,10 @@ const SinglePost = React.createClass({
     let fetchedData = this.state.fetchedData;
     //console.log(fetchedData,this.props.params.postId);
     return (
-      <div>
+      <article>
         <Helmet title={fetchedData.title.rendered+' | '+ appConfig.wordpressName} />
-        <div>{fetchedData.title.rendered}</div>
-      </div>
+        <div className='container'>{fetchedData.title.rendered}</div>
+      </article>
     );
   }
 });

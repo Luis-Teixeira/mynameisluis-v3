@@ -38,7 +38,11 @@ var
   	});
 		bundler.transform(babelify); // use the reactify transform
 		return bundler.bundle()
-			.on( 'error', function (err) {console.log(err); this.emit('end'); $.util.log.bind( $.util, 'Browserify Error' );})
+			.on( 'error', function (err) {
+				console.log(err);
+				this.emit('end');
+				$.util.log.bind( $.util, 'Browserify Error' );
+			})
 			.pipe( source( 'app.js' ) )
 				// .pipe( buffer() )
 				// .pipe( $.sourcemaps.init( { loadMaps: true } ) )

@@ -2937,7 +2937,7 @@ input[type="button"].btn-block {
 .position-rel, .Post {
   position: relative; }
 
-.position-abs, .Post:before, .Post_link {
+.position-abs, .Post:before, .Post_link, .SinglePost-warper {
   position: absolute; }
 
 .round {
@@ -2965,8 +2965,17 @@ input[type="button"].btn-block {
 .align-items-center {
   align-items: center; }
 
-.w100 {
+.w100, .SinglePost-warper {
   width: 100%; }
+
+.w75 {
+  width: 75%; }
+
+.w50 {
+  width: 50%; }
+
+.w25 {
+  width: 25%; }
 
 .font-smoothing {
   -moz-osx-font-smoothing: grayscale;
@@ -2983,6 +2992,33 @@ input[type="button"].btn-block {
 
 .font-bolder {
   font-weight: bolder; }
+
+.font-100 {
+  font-weight: 100; }
+
+.font-200 {
+  font-weight: 200; }
+
+.font-300 {
+  font-weight: 300; }
+
+.font-400 {
+  font-weight: 400; }
+
+.font-500 {
+  font-weight: 500; }
+
+.font-600 {
+  font-weight: 600; }
+
+.font-700 {
+  font-weight: 700; }
+
+.font-800 {
+  font-weight: 800; }
+
+.font-900 {
+  font-weight: 900; }
 
 .font-sans-serif {
   font-family: "Raleway", "TisaOT", Helvetica, Arial, sans-serif; }
@@ -3031,7 +3067,7 @@ input[type="button"].btn-block {
 .color-white, .Post_link, .Post_link a {
   color: #fff; }
 
-.bg-color-white {
+.bg-color-white, .Homepage-warper, .SinglePost-warper {
   background-color: #fff; }
 
 .color-black, .Post_link:hover a {
@@ -3123,6 +3159,18 @@ input[type="button"].btn-block {
   .animated .faster, .lazy-load .faster, .Post .faster, .Post_link .faster, .image .faster {
     transition: all 250ms; }
 
+.animated-super-slower {
+  transition: all 1500ms; }
+
+.animated-slower {
+  transition: all 750ms; }
+
+.animated-faster {
+  transition: all 250ms; }
+
+.animated-super-faster {
+  transition: all 100ms; }
+
 body {
   font-weight: 200; }
 
@@ -3138,6 +3186,17 @@ body {
 
 .AboutSectionHP .the-content {
   min-height: 220px; }
+
+.Homepage-warper {
+  transition: transform 400ms;
+  transition-timing-function: cubic-bezier(0.725, 0, 0.33, 1.43); }
+  .Homepage-warper.with-overlay {
+    transform: scale(0.9);
+    border: 1px solid #e7e5e5;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15); }
+  .Homepage-warper.filter-blur {
+    -webkit-filter: blur(2px);
+    filter: blur(2px); }
 
 .Post {
   height: 400px; }
@@ -3233,6 +3292,18 @@ body {
   font-style: italic;
   align-items: center;
   height: 50px; }
+
+.SinglePost-warper {
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.245, 0.65, 0.51, 1.01);
+  display: none;
+  top: 0;
+  min-height: 100vh;
+  transform: translateY(100vh) scale(0.9); }
+  .SinglePost-warper.inited {
+    display: block; }
+  .SinglePost-warper.in {
+    transform: translateY(140px) scale(1); }
 
 /**
  * Swiper 3.1.7

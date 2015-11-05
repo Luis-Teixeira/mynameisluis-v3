@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom'
 import ReactTransitionGroup from 'react/lib/ReactCSSTransitionGroup'
 import createBrowserHistory from 'history/lib/createBrowserHistory'
-import { Router, Route, Link , Redirect, IndexRoute} from 'react-router'
+import { Router, Route , Redirect,Lifecycle,RouteContext} from 'react-router'
 
 
 import Header from './Header.jsx'
@@ -10,6 +10,7 @@ import Homepage from './Homepage.jsx'
 import Footer from './Footer.jsx'
 import SinglePost from './SinglePost.jsx'
 
+/* /?gf_page=preview&id=1  */
 
 const App = React.createClass({
 

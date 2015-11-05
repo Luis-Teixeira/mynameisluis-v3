@@ -58,9 +58,50 @@ function wpapi_scripts() {
 	wp_enqueue_style( 'wpapi-style', get_stylesheet_uri(), '20150831' );
 	wp_register_script( 'wpapi-script', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), '20150831', true );
 	wp_enqueue_script( 'wpapi-script' );
+
+	addGlobalVarToJavascript();
 }
 
 add_action( 'wp_enqueue_scripts', 'wpapi_scripts' );
+
+
+
+function addGlobalVarToJavascript () {
+
+	$params = array(
+	  'themeURL' => get_stylesheet_directory_uri(),
+	  'wordpressName' => get_bloginfo('name'),
+	);
+	wp_localize_script( 'wpapi-script', 'appConfig', $params );
+
+	$gfParams = array(
+		'root_url' => site_url().'/gravityformsapi/',
+		'nonce' => wp_create_nonce( 'gf_api' ),
+		'contactFormID' => 1
+	);
+	wp_localize_script( 'wpapi-script', 'gfApiVars', $gfParams );
+
+}
+// function scripts() {
+// 	$scripts = array(
+// 		array(
+// 			'handle'  => 'gf_web_api_demo_js',
+// 			'src'     => $this->get_base_url() . '/js/gf_web_api_demo.js',
+// 			'deps'    => array( 'jquery' ),
+// 			'version' => $this->_version,
+// 			'enqueue' => array(
+// 				array( 'query' => 'page=gravityformswebapidemo' ),
+// 			),
+// 			'strings' => array(
+// 				'root_url' => $this->get_api_url(),
+// 				'form_id' => $this->_form_id,
+// 				'nonce' => wp_create_nonce( 'gf_api' ),
+// 			)
+// 		),
+// 	);
+
+// 	return array_merge( parent::scripts(), $scripts );
+// }
 
 /**
  * Show Custom Post Type in  Rest
