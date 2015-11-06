@@ -27,8 +27,8 @@ const AboutStore = Reflux.createStore({
     } else {
       //this.trigger(this.page);
       //JUST FOR DEBUG
-      this.fetchPage(); //
-      //this.updateList(JSON.parse(loadedList));
+      //this.fetchPage(); //
+      this.updateList(JSON.parse(loadedList));
       //this.compareLatestsID();
     }
     //console.log('local else ->', this.page);

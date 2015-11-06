@@ -1,0 +1,16 @@
+.ContactForm {
+  @extend .animated-faster;
+  &.fadeout {
+    opacity: 0;
+  }
+}
+
+.happy-message {
+  @extend .animated-faster;
+  &.fade {
+    opacity: 0;
+    &.in {
+      opacity: 1;
+    }
+  }
+}

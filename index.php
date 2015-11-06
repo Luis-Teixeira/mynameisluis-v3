@@ -26,50 +26,6 @@
 	</div><!-- #content -->
 
 </div><!-- #page -->
-
-
-
-<script>
-  // get Form var url ="http://wpapi.dev/gravityformsapi/forms/1?_gf_json_nonce=2313c35de9"
-  // post var url ='http://wpapi.dev/gravityformsapi/forms/1/submissions';// apiVars['root_url'] + 'forms/' + apiVars['form_id'] +  '/submissions';
-
-  $ = jQuery;
-
-  $('#submit_button').click(function () {
-    var url ="http://wpapi.dev/gravityformsapi/forms/1?_gf_json_nonce=2313c35de9"
-    var url ='http://wpapi.dev/gravityformsapi/forms/1/submissions';// apiVars['root_url'] + 'forms/' + apiVars['form_id'] +  '/submissions';
-    submitForm( url );
-});
-
-function submitForm(url){
-
-  var inputValues = {
-      input_1: $('#input_1').val(),
-      input_4: $('#input_4').val(),
-      input_3: $('#input_3').val()
-  };
-
-  var data = {
-      input_values: inputValues
-  };
-
-  $.ajax({
-      url: url,
-      type: 'POST',
-      data: JSON.stringify(data),
-      beforeSend: function (xhr, opts) {
-          //$sending.show();
-      }
-  })
-  .done(function (data, textStatus, xhr) {
-      //$sending.hide();
-      var response = JSON.stringify(data.response, null, '\t');
-      //$results.val(response);
-      console.log(response);
-  })
-}
-</script>
-
 <?php wp_footer(); ?>
 
 </body>

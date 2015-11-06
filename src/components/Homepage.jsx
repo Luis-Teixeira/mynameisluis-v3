@@ -89,9 +89,7 @@ const Homepage = React.createClass({
           ]}
         />
         <section className={homepageWarperClass} ref="homepageWarper">
-          <AboutHp />
-          <Posts />
-          <Facts />
+
         </section>
         <section className={singlePostClass} style={{minHeight: jQuery('.Homepage-warper').height()+10}}>
           {React.cloneElement(this.props.children || <div />, { key: 'key' })}
@@ -100,5 +98,7 @@ const Homepage = React.createClass({
     );
   }
 });
-
+/*<AboutHp />
+          <Posts />
+          <Facts />*/
 module.exports = Homepage;

@@ -1,14 +1,15 @@
 .Header {
 
-  background-color: $gray-lighter;
-  @extend .padding-t-50;
-  @extend .padding-b-50;
+  @extend .padding-t-50,
+          .padding-b-50,
+          .bg-gray-lighter;
 
   .nav {
-    @extend .col-md-4;
-    @extend .pull-right;
-    @extend .font-cosmonaut;
-    @extend .text-right;
+    @extend .col-md-4,
+            .pull-right,
+            .font-cosmonaut,
+            .text-right;
+
     line-height: 45px;
 
   }

@@ -28,7 +28,7 @@ var PostsStore = Reflux.createStore ({
       } else {
         //this.trigger(this.posts);
         this.updateList(JSON.parse(loadedList));
-        this.compareLatestsID();
+        //this.compareLatestsID();
       }
       //console.log('local else ->', this.posts);
       return this.posts;

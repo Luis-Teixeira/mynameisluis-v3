@@ -66,6 +66,10 @@ add_action( 'wp_enqueue_scripts', 'wpapi_scripts' );
 
 
 
+
+define('GF_PUBLIC_KEY','8562b7ac3b');
+define('GF_PRIVATE_KEY','72f9f8fb9dbe478');
+
 function addGlobalVarToJavascript () {
 
 	$params = array(
@@ -74,34 +78,34 @@ function addGlobalVarToJavascript () {
 	);
 	wp_localize_script( 'wpapi-script', 'appConfig', $params );
 
+	$api_key = "8562b7ac3b";
+	$private_key = "72f9f8fb9dbe478";
+	$method  = "GET";
+	$route    = "forms/1";
+	$expires = strtotime("+60 mins");
+	$string_to_sign = sprintf("%s:%s:%s:%s", $api_key, $method, $route, $expires);
+	$sig = calculate_signature($string_to_sign, $private_key);
+	// _pr($expires);
+	// _pr($sig);
+
 	$gfParams = array(
 		'root_url' => site_url().'/gravityformsapi/',
 		'nonce' => wp_create_nonce( 'gf_api' ),
+		'sig_1' => $sig,
+		'expires' => $expires,
+		'api_key' => $api_key,
 		'contactFormID' => 1
 	);
 	wp_localize_script( 'wpapi-script', 'gfApiVars', $gfParams );
 
 }
-// function scripts() {
-// 	$scripts = array(
-// 		array(
-// 			'handle'  => 'gf_web_api_demo_js',
-// 			'src'     => $this->get_base_url() . '/js/gf_web_api_demo.js',
-// 			'deps'    => array( 'jquery' ),
-// 			'version' => $this->_version,
-// 			'enqueue' => array(
-// 				array( 'query' => 'page=gravityformswebapidemo' ),
-// 			),
-// 			'strings' => array(
-// 				'root_url' => $this->get_api_url(),
-// 				'form_id' => $this->_form_id,
-// 				'nonce' => wp_create_nonce( 'gf_api' ),
-// 			)
-// 		),
-// 	);
 
-// 	return array_merge( parent::scripts(), $scripts );
-// }
+function calculate_signature($string, $private_key) {
+  $hash = hash_hmac("sha1", $string, $private_key, true);
+  $sig = rawurlencode(base64_encode($hash));
+  return $sig;
+}
+
 
 /**
  * Show Custom Post Type in  Rest
