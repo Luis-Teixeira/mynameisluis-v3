@@ -11,19 +11,19 @@ const ContactForm = React.createClass({
   // and the form message into the state
   getInitialState: function() {
     return {
-      name: 'luis',
-      email: 'lui@sss.pp',
+      name: '',
+      email: '',
       message: '',
       validationMessage: '',
       sending: false,
       hasError: false,
-      hasSucess: false
+      hasSucess: false,
+      hasLoaded: false
     };
   },
 
   componentDidMount() {
-    //ContactFormStore.fetchContactForm();
-
+      //ContactFormStore.fetchContactForm();
   },
 
   changeName: function(e) {
@@ -145,6 +145,7 @@ const ContactForm = React.createClass({
 
   render() {
     let self = this;
+    //console.log(this.props.animationIn);
     //console.log(this.state.form);
     //console.log(self.state.validationMessage);
     let formClasses = cx({
@@ -157,11 +158,10 @@ const ContactForm = React.createClass({
       'out' : !this.state.hasSucess,
       'in' : this.state.hasSucess
     });
+
     return (
-      <div>
-      <div className="font-size-h3 font-700 text-uppercase">
-        Say Hi! It's free
-      </div>
+      <div className="Form col-md-7 col-md-push-2">
+
       {
           this.state.hasError ?
             <div className="alert alert-danger message-box" role="alert">
@@ -176,7 +176,8 @@ const ContactForm = React.createClass({
 
         <form className={formClasses} onSubmit={this.onSubmit} ref="form">
 
-          {
+        {
+          this.state.hasLoaded ?
             this.state.form.response.fields.map(function(input, i){
               //console.log(input);
               let id = 'input_'+input.id+'_'+input.formId;
@@ -203,15 +204,16 @@ const ContactForm = React.createClass({
                 )
               }
             })
-          }
+          : <div/>
+        }
 
-          <button className="btn btn-primary" >Send It</button>
+
+        <button className="btn btn-primary" >Send It</button>
         </form>
       </div>
     );
   }
 });
 
-
-
 module.exports = ContactForm;
+

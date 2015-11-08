@@ -1,5 +1,72 @@
 .Footer {
-  @extend .bg-gray-lighter,
-          .padding-t-30,
-          .padding-b-30;
+  @extend .bg-gray,
+          .padding-t-50,
+          .padding-b-50;
+}
+
+.Form-title-subtitle {
+  small {
+    font-size: 11px;
+  }
+}
+
+.form-trigger {
+  @extend .margin-t-40,
+          .padding-l-40,
+          .padding-r-40,
+          .animated-faster;
+
+
+  border-radius: 20px;
+  width: 155px;
+  height: 40px;
+
+  &:hover {
+    width: 165px;
+    background: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+  &:focus {
+    outline-color: transparent;
+    outline-width: 0;
+    background: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+  &.toAlphaText {
+    color:transparent;
+
+  }
+
+  &.toCircle {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+
+}
+
+
+.form-bg-fx {
+  @extend .position-abs,
+          .bg-brand-primary,
+          .round;
+
+  width: 39px;
+  height: 39px;
+  top: 40px; //some value form-trigger margin-top
+  left: 50%;
+  margin-left: -20px;
+  z-index: 1000;
+
+}
+
+.ContactForm-warper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  opacity: 0;
+  visibility: hidden;
 }

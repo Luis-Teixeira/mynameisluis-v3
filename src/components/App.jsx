@@ -18,7 +18,7 @@ const App = React.createClass({
     var key = '';//(this.props.location.pathname.split("/")[1] !== '') ? '' : this.props.location.pathname;
     return (
       <div className="app">
-        {/*<Header />*/}
+        <Header />
         <div>
           {React.cloneElement(this.props.children || <div />, { key: key })}
         </div>

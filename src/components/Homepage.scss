@@ -3,11 +3,11 @@
           //.animated-super-faster;
 
   transition : transform 400ms;
-  transition-timing-function: cubic-bezier(0.725, 0.000, 0.330, 1.430);
+  transition-timing-function: cubic-bezier(.725, 0, .330, 1.430);
   &.with-overlay {
     transform: scale(.90);
     border: 1px solid darken($gray-lighter,2%);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .25);
   }
 
   &.filter-blur {

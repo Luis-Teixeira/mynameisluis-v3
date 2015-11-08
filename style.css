@@ -12,6 +12,13 @@ License URI: http://sam.zoy.org/wtfpl/
 Are You Serious? Yes.
 */
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+.btn-primary.btn-inverted {
+  background-color: transparent;
+  color: #1489E0; }
+  .btn-primary.btn-inverted:hover {
+    background-color: #1489E0;
+    color: #fff; }
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -243,14 +250,14 @@ img {
   height: auto; }
 
 .img-rounded {
-  border-radius: 0px; }
+  border-radius: 2px; }
 
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 0px;
+  border-radius: 2px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -1191,7 +1198,7 @@ output {
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
-  border-radius: 0px;
+  border-radius: 2px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
@@ -1334,7 +1341,7 @@ fieldset[disabled]
   padding: 5px 10px;
   font-size: 16px;
   line-height: 1.5;
-  border-radius: 0px; }
+  border-radius: 2px; }
 
 select.input-sm {
   height: 36px;
@@ -1349,7 +1356,7 @@ select[multiple].input-sm {
   padding: 5px 10px;
   font-size: 16px;
   line-height: 1.5;
-  border-radius: 0px; }
+  border-radius: 2px; }
 
 .form-group-sm select.form-control {
   height: 36px;
@@ -1371,7 +1378,7 @@ select[multiple].input-sm {
   padding: 10px 16px;
   font-size: 23px;
   line-height: 1.33333;
-  border-radius: 0px; }
+  border-radius: 2px; }
 
 select.input-lg {
   height: 53px;
@@ -1386,7 +1393,7 @@ select[multiple].input-lg {
   padding: 10px 16px;
   font-size: 23px;
   line-height: 1.33333;
-  border-radius: 0px; }
+  border-radius: 2px; }
 
 .form-group-lg select.form-control {
   height: 53px;
@@ -1626,7 +1633,7 @@ select[multiple].input-lg {
   padding: 6px 12px;
   font-size: 18px;
   line-height: 1.42857;
-  border-radius: 0px;
+  border-radius: 2px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1920,19 +1927,19 @@ fieldset[disabled] a.btn {
   padding: 10px 16px;
   font-size: 23px;
   line-height: 1.33333;
-  border-radius: 0px; }
+  border-radius: 2px; }
 
 .btn-sm {
   padding: 5px 10px;
   font-size: 16px;
   line-height: 1.5;
-  border-radius: 0px; }
+  border-radius: 2px; }
 
 .btn-xs {
   padding: 1px 5px;
   font-size: 16px;
   line-height: 1.5;
-  border-radius: 0px; }
+  border-radius: 2px; }
 
 .btn-block {
   display: block;
@@ -1950,7 +1957,7 @@ input[type="button"].btn-block {
   padding: 15px;
   margin-bottom: 25px;
   border: 1px solid transparent;
-  border-radius: 0px; }
+  border-radius: 2px; }
   .alert h4 {
     margin-top: 0;
     color: inherit; }
@@ -2468,13 +2475,13 @@ input[type="button"].btn-block {
 .padding-30 {
   padding: 30px; }
 
-.padding-t-30, .Footer {
+.padding-t-30 {
   padding-top: 30px; }
 
 .padding-r-30 {
   padding-right: 30px; }
 
-.padding-b-30, .Footer {
+.padding-b-30 {
   padding-bottom: 30px; }
 
 .padding-l-30 {
@@ -2531,19 +2538,19 @@ input[type="button"].btn-block {
 .padding-t-40, .AboutSectionHP .the-content {
   padding-top: 40px; }
 
-.padding-r-40 {
+.padding-r-40, .form-trigger {
   padding-right: 40px; }
 
 .padding-b-40 {
   padding-bottom: 40px; }
 
-.padding-l-40 {
+.padding-l-40, .form-trigger {
   padding-left: 40px; }
 
 .margin-40 {
   margin: 40px; }
 
-.margin-t-40 {
+.margin-t-40, .form-trigger {
   margin-top: 40px; }
 
 .margin-r-40 {
@@ -2588,13 +2595,13 @@ input[type="button"].btn-block {
 .padding-50 {
   padding: 50px; }
 
-.padding-t-50, .Header {
+.padding-t-50, .Header, .Footer {
   padding-top: 50px; }
 
 .padding-r-50 {
   padding-right: 50px; }
 
-.padding-b-50, .Header {
+.padding-b-50, .Header, .Footer {
   padding-bottom: 50px; }
 
 .padding-l-50 {
@@ -2999,10 +3006,10 @@ input[type="button"].btn-block {
 .position-rel, .Post {
   position: relative; }
 
-.position-abs, .Post:before, .Post_link, .SinglePost-warper {
+.position-abs, .form-bg-fx, .Post:before, .Post_link, .SinglePost-warper {
   position: absolute; }
 
-.round {
+.round, .form-bg-fx {
   border-radius: 50%; }
 
 .no-border-radius {
@@ -3159,7 +3166,7 @@ input[type="button"].btn-block {
 .gray {
   color: #555555; }
 
-.bg-gray {
+.bg-gray, .Footer {
   background-color: #555555; }
 
 .gray-light, .who-name {
@@ -3171,13 +3178,13 @@ input[type="button"].btn-block {
 .gray-lighter {
   color: #ECEAEA; }
 
-.bg-gray-lighter, .Header, .AboutSectionHP, .Footer, .Post {
+.bg-gray-lighter, .Header, .AboutSectionHP, .Post {
   background-color: #ECEAEA; }
 
 .brand-primary {
   color: #1489E0; }
 
-.bg-brand-primary {
+.bg-brand-primary, .form-bg-fx {
   background-color: #1489E0; }
 
 .brand-success {
@@ -3207,6 +3214,10 @@ input[type="button"].btn-block {
 .no-shadow {
   box-shadow: 0 0 0 0; }
 
+.no-outline:focus {
+  outline-color: transparent;
+  outline-width: 0; }
+
 .transition-all,
 .animated,
 .lazy-load,
@@ -3227,7 +3238,7 @@ input[type="button"].btn-block {
 .animated-slower {
   transition: all 750ms; }
 
-.animated-faster, .ContactForm, .happy-message {
+.animated-faster, .form-trigger, .ContactForm, .happy-message {
   transition: all 250ms; }
 
 .animated-super-faster {
@@ -3253,10 +3264,49 @@ body {
   .Homepage-warper.with-overlay {
     transform: scale(0.9);
     border: 1px solid #e7e5e5;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15); }
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25); }
   .Homepage-warper.filter-blur {
     -webkit-filter: blur(2px);
     filter: blur(2px); }
+
+.Form-title-subtitle small {
+  font-size: 11px; }
+
+.form-trigger {
+  border-radius: 20px;
+  width: 155px;
+  height: 40px; }
+  .form-trigger:hover {
+    width: 165px;
+    background: #1489E0;
+    border-color: #1489E0; }
+  .form-trigger:focus {
+    outline-color: transparent;
+    outline-width: 0;
+    background: #1489E0;
+    border-color: #1489E0; }
+  .form-trigger.toAlphaText {
+    color: transparent; }
+  .form-trigger.toCircle {
+    width: 40px;
+    height: 40px;
+    padding: 0; }
+
+.form-bg-fx {
+  width: 39px;
+  height: 39px;
+  top: 40px;
+  left: 50%;
+  margin-left: -20px;
+  z-index: 1000; }
+
+.ContactForm-warper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  opacity: 0;
+  visibility: hidden; }
 
 .Post {
   height: 400px; }

@@ -30,15 +30,15 @@ const ContactFormStore = Reflux.createStore({
     let loadedList = localStorage.getItem(localStorageKey);
 
     // //console.log('local (há? )->' , loadedList  );
-    if (!loadedList || loadedList === 'undefined') {
-       this.fetchContactForm();
-    } else {
-    //   //this.trigger(this.form);
-    //   //JUST FOR DEBUG
-       this.fetchContactForm(); //
-       this.updateList(JSON.parse(loadedList));
-    //   //this.compareLatestsID();
-    }
+    // if (!loadedList || loadedList === 'undefined') {
+    //    this.fetchContactForm();
+    // } else {
+    // //   //this.trigger(this.form);
+    // //   //JUST FOR DEBUG
+    //    this.fetchContactForm(); //
+    //    this.updateList(JSON.parse(loadedList));
+    // //   //this.compareLatestsID();
+    // }
     //console.log('local else ->', this.form);
     return this.form;
 
