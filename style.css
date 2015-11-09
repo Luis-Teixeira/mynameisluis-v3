@@ -14,9 +14,9 @@ Are You Serious? Yes.
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
 .btn-primary.btn-inverted {
   background-color: transparent;
-  color: #1489E0; }
+  color: #1C95B6; }
   .btn-primary.btn-inverted:hover {
-    background-color: #1489E0;
+    background-color: #1C95B6;
     color: #fff; }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -228,10 +228,10 @@ textarea {
   line-height: inherit; }
 
 a {
-  color: #1489E0;
+  color: #1C95B6;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #0e5e9a;
+    color: #125f74;
     text-decoration: none; }
   a:focus {
     outline: thin dotted;
@@ -396,7 +396,8 @@ mark,
 .text-right, .Header .nav {
   text-align: right; }
 
-.text-center, .AboutSectionHP .the-content, .Facts, .Form, .Form .bt-send-it, .form-messages {
+.text-center, .AboutSectionHP .the-content, .Facts, .Form, .Form .bt-send-it,
+.Form .bt-resend-it, .form-messages {
   text-align: center; }
 
 .text-justify {
@@ -418,11 +419,11 @@ mark,
   color: #777777; }
 
 .text-primary {
-  color: #1489E0; }
+  color: #1C95B6; }
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #106cb1; }
+  color: #15718a; }
 
 .text-success {
   color: #3c763d; }
@@ -456,11 +457,11 @@ a.text-danger:focus {
   color: #fff; }
 
 .bg-primary {
-  background-color: #1489E0; }
+  background-color: #1C95B6; }
 
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #106cb1; }
+  background-color: #15718a; }
 
 .bg-success {
   background-color: #dff0d8; }
@@ -1704,28 +1705,28 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #1489E0;
-  border-color: #127bc9; }
+  background-color: #1C95B6;
+  border-color: #1983a0; }
   .btn-primary:focus, .btn-primary.focus {
     color: #fff;
-    background-color: #106cb1;
-    border-color: #073354; }
+    background-color: #15718a;
+    border-color: #082831; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #106cb1;
-    border-color: #0d5890; }
+    background-color: #15718a;
+    border-color: #10576b; }
   .btn-primary:active, .btn-primary.active,
   .open > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #106cb1;
-    border-color: #0d5890; }
+    background-color: #15718a;
+    border-color: #10576b; }
     .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus,
     .open > .btn-primary.dropdown-toggle:hover,
     .open > .btn-primary.dropdown-toggle:focus,
     .open > .btn-primary.dropdown-toggle.focus {
       color: #fff;
-      background-color: #0d5890;
-      border-color: #073354; }
+      background-color: #10576b;
+      border-color: #082831; }
   .btn-primary:active, .btn-primary.active,
   .open > .btn-primary.dropdown-toggle {
     background-image: none; }
@@ -1736,10 +1737,10 @@ fieldset[disabled] a.btn {
   fieldset[disabled] .btn-primary.focus,
   fieldset[disabled] .btn-primary:active,
   fieldset[disabled] .btn-primary.active {
-    background-color: #1489E0;
-    border-color: #127bc9; }
+    background-color: #1C95B6;
+    border-color: #1983a0; }
   .btn-primary .badge {
-    color: #1489E0;
+    color: #1C95B6;
     background-color: #fff; }
 
 .btn-success {
@@ -1903,7 +1904,7 @@ fieldset[disabled] a.btn {
     background-color: #fff; }
 
 .btn-link {
-  color: #1489E0;
+  color: #1C95B6;
   font-weight: normal;
   border-radius: 0; }
   .btn-link, .btn-link:active, .btn-link.active, .btn-link[disabled],
@@ -1914,7 +1915,7 @@ fieldset[disabled] a.btn {
   .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
     border-color: transparent; }
   .btn-link:hover, .btn-link:focus {
-    color: #0e5e9a;
+    color: #125f74;
     text-decoration: none;
     background-color: transparent; }
   .btn-link[disabled]:hover, .btn-link[disabled]:focus,
@@ -2436,7 +2437,7 @@ input[type="button"].btn-block {
 .margin-r-20 {
   margin-right: 20px; }
 
-.margin-b-20 {
+.margin-b-20, .logo-on-form {
   margin-bottom: 20px; }
 
 .margin-l-20, .Header .nav-link {
@@ -2550,13 +2551,15 @@ input[type="button"].btn-block {
 .margin-40 {
   margin: 40px; }
 
-.margin-t-40, .form-trigger, .Form .bt-send-it {
+.margin-t-40, .form-trigger, .Form .bt-send-it,
+.Form .bt-resend-it, .form-messages .message-box {
   margin-top: 40px; }
 
 .margin-r-40 {
   margin-right: 40px; }
 
-.margin-b-40, .AboutSectionHP, .Facts, .Facts:before {
+.margin-b-40, .AboutSectionHP, .Facts, .Facts:before,
+.copy-form {
   margin-bottom: 40px; }
 
 .margin-l-40 {
@@ -2850,7 +2853,7 @@ input[type="button"].btn-block {
 .margin-100 {
   margin: 100px; }
 
-.margin-t-100, .form-messages .message-box {
+.margin-t-100 {
   margin-top: 100px; }
 
 .margin-r-100 {
@@ -2921,6 +2924,36 @@ input[type="button"].btn-block {
 
 .margin-l-120 {
   margin-left: 120px; }
+
+.padding-140 {
+  padding: 140px; }
+
+.padding-t-140, .Form {
+  padding-top: 140px; }
+
+.padding-r-140 {
+  padding-right: 140px; }
+
+.padding-b-140 {
+  padding-bottom: 140px; }
+
+.padding-l-140 {
+  padding-left: 140px; }
+
+.margin-140 {
+  margin: 140px; }
+
+.margin-t-140 {
+  margin-top: 140px; }
+
+.margin-r-140 {
+  margin-right: 140px; }
+
+.margin-b-140 {
+  margin-bottom: 140px; }
+
+.margin-l-140 {
+  margin-left: 140px; }
 
 .padding-150 {
   padding: 150px; }
@@ -3182,10 +3215,10 @@ input[type="button"].btn-block {
   background-color: #ECEAEA; }
 
 .brand-primary {
-  color: #1489E0; }
+  color: #1C95B6; }
 
 .bg-brand-primary, .form-bg-fx {
-  background-color: #1489E0; }
+  background-color: #1C95B6; }
 
 .brand-success {
   color: #5cb85c; }
@@ -3214,7 +3247,10 @@ input[type="button"].btn-block {
 .no-shadow {
   box-shadow: 0 0 0 0; }
 
-.no-outline:focus, .Form .bt-send-it:focus, .no-outline:active, .Form .bt-send-it:active, .no-outline:focus:active, .Form .bt-send-it:focus:active {
+.no-outline:focus, .Form .bt-send-it:focus,
+.Form .bt-resend-it:focus, .no-outline:active, .Form .bt-send-it:active,
+.Form .bt-resend-it:active, .no-outline:focus:active, .Form .bt-send-it:focus:active,
+.Form .bt-resend-it:focus:active {
   outline-color: transparent;
   outline-width: 0; }
 
@@ -3224,13 +3260,16 @@ input[type="button"].btn-block {
 .Post,
 .Post_link,
 .image,
-.Form .bt-send-it {
+.Form .bt-send-it,
+.Form .bt-resend-it {
   transition: all 500ms; }
   .transition-all .slower,
-  .animated .slower, .lazy-load .slower, .Post .slower, .Post_link .slower, .image .slower, .Form .bt-send-it .slower {
+  .animated .slower, .lazy-load .slower, .Post .slower, .Post_link .slower, .image .slower, .Form .bt-send-it .slower,
+  .Form .bt-resend-it .slower {
     transition: all 750ms; }
   .transition-all .faster,
-  .animated .faster, .lazy-load .faster, .Post .faster, .Post_link .faster, .image .faster, .Form .bt-send-it .faster {
+  .animated .faster, .lazy-load .faster, .Post .faster, .Post_link .faster, .image .faster, .Form .bt-send-it .faster,
+  .Form .bt-resend-it .faster {
     transition: all 250ms; }
 
 .animated-super-slower {
@@ -3239,7 +3278,7 @@ input[type="button"].btn-block {
 .animated-slower {
   transition: all 750ms; }
 
-.animated-faster, .form-trigger, .ContactForm, .happy-message {
+.animated-faster, .form-trigger {
   transition: all 250ms; }
 
 .animated-super-faster {
@@ -3252,6 +3291,48 @@ body {
   opacity: 0; }
   .lazy-load.lazy-load-visible {
     opacity: 1; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  99% {
+    opacity: 0; }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    height: 0; } }
+
+/* Standard syntax */
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  99% {
+    opacity: 0; }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    height: 0; } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    height: auto; }
+  1% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/* Standard syntax */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    height: auto; }
+  1% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .Header .nav {
   line-height: 45px; }
@@ -3279,13 +3360,13 @@ body {
   height: 40px; }
   .form-trigger:hover {
     width: 200px;
-    background: #1489E0;
-    border-color: #1489E0; }
+    background: #1C95B6;
+    border-color: #1C95B6; }
   .form-trigger:focus, .form-trigger:active, .form-trigger:focus:active {
     outline-color: transparent;
     outline-width: 0;
-    background: #1489E0;
-    border-color: #1489E0; }
+    background: #1C95B6;
+    border-color: #1C95B6; }
   .form-trigger.toAlphaText {
     color: transparent; }
   .form-trigger.toCircle {
@@ -3433,19 +3514,11 @@ body {
   .SinglePost-warper.in {
     transform: translateY(140px) scale(1); }
 
-.ContactForm.fadeout {
-  opacity: 0 !important; }
-
-.happy-message.fade {
-  opacity: 0;
-  visibility: hidden; }
-  .happy-message.fade.in {
-    opacity: 1;
-    visibility: inherit; }
+.happy-message {
+  opacity: 0; }
 
 .Form {
-  opacity: 0;
-  padding-top: 240px; }
+  opacity: 0; }
   .Form .form-control {
     background-color: transparent;
     border: 2px solid #fff; }
@@ -3456,30 +3529,40 @@ body {
       color: #fff; }
     .Form .form-control::-webkit-input-placeholder {
       color: #fff; }
-  .Form .bt-send-it {
+  .Form .bt-send-it,
+  .Form .bt-resend-it {
     width: 180px;
     height: 40px;
     background-color: transparent;
     border: 2px solid #fff;
     border-radius: 20px; }
-    .Form .bt-send-it:hover {
+    .Form .bt-send-it:hover,
+    .Form .bt-resend-it:hover {
       width: 190px; }
+  .Form .bt-resend-it {
+    width: 300px; }
+    .Form .bt-resend-it:hover {
+      width: 310px; }
 
 .form-messages {
   left: 0; }
 
+
+.copy-form {
+  line-height: 120%; }
+
 /**
  * Swiper 3.1.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions
- * 
+ *
  * http://www.idangero.us/swiper/
- * 
+ *
  * Copyright 2015, Vladimir Kharlampidi
  * The iDangero.us
  * http://www.idangero.us/
- * 
+ *
  * Licensed under MIT
- * 
+ *
  * Released on: October 10, 2015
  */
 .swiper-container {
@@ -3660,7 +3743,7 @@ button.swiper-pagination-bullet {
 
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #007aff; }
+  background: #1C95B6; }
 
 .swiper-pagination-white .swiper-pagination-bullet-active {
   background: #fff; }

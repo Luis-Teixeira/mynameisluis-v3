@@ -1,30 +1,44 @@
 .ContactForm {
-  @extend .animated-faster;
+
+  //@extend .animated-faster;
+  // animation: fadeIn 450ms ;
+  // animation-fill-mode: forwards;
+  // animation-iteration-count: 1;
+  // -webkit-animation: fadeIn 450ms ;
+  // -webkit-animation-fill-mode: forwards;
+  // -webkit-animation-iteration-count: 1;
+
   &.fadeout {
-    opacity: 0 !important;
+    //opacity: 0 !important;
+    // animation: fadeOut 450ms ;
+    // animation-fill-mode: forwards;
+    // animation-iteration-count: 1;
+    // -webkit-animation: fadeOut 450ms ;
+    // -webkit-animation-fill-mode: forwards;
+    // -webkit-animation-iteration-count: 1;
   }
 }
 
 .happy-message {
-  @extend .animated-faster;
-  &.fade {
-    opacity: 0;
-    visibility: hidden;
-    &.in {
-      opacity: 1;
-      visibility: inherit;
-    }
-  }
+  opacity: 0;
+  // @extend .animated-faster;
+  // &.fade {
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   &.in {
+  //     opacity: 1;
+  //     visibility: inherit;
+  //   }
+  // }
 }
 
 .Form {
   opacity: 0;
   @extend .col-md-8,
           .col-md-push-2,
-
+          .padding-t-140,
           .text-center;
 
-  padding-top: 240px;
 
   .form-control {
     @extend .color-white;
@@ -33,7 +47,8 @@
     @include placeholder(#fff);
   }
 
-  .bt-send-it {
+  .bt-send-it,
+  .bt-resend-it {
     width: 180px;
     height: 40px;
     background-color: transparent;
@@ -42,6 +57,13 @@
     border-radius: 20px;
     &:hover {
       width: 190px;
+    }
+  }
+
+  .bt-resend-it {
+    width: 300px;
+    &:hover {
+      width: 310px;
     }
   }
 }
@@ -56,6 +78,16 @@
   .message-box {
     @extend .col-md-8,
             .col-md-push-2,
-            .margin-t-100;
+            .margin-t-40;
   }
+}
+
+.logo-on-form {
+  @extend .margin-b-20;
+}
+
+,
+.copy-form {
+  @extend .margin-b-40;
+  line-height: 120%;
 }

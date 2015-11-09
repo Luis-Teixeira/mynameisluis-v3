@@ -36,8 +36,8 @@ class Header extends React.Component {
       <header className="Header">
         <div className="container">
           <div className="row">
-            <Link  to="/" className="logo col-md-2 col-xs-2">
-              <img src={appConfig.themeURL+"/images/logo.svg"} />
+            <Link  to="/" className="logo col-md-1 col-xs-1">
+              <img className="img-responsive" src={appConfig.themeURL+"/images/mnsl-v3-color.svg"} />
             </Link>
             <nav className="nav">
               <Link to={`/`} className="nav-link" activeClassName="active"> Home </Link>

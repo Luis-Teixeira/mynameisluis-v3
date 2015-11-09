@@ -6,6 +6,8 @@ import cx from 'classnames';
 import GSAP from 'gsap'
 
 var tl = new TimelineLite();
+var tlsuccess = new TimelineLite();
+
 const ContactForm = React.createClass({
 
   mixins: [Reflux.connect(ContactFormStore,"form")],
@@ -16,7 +18,7 @@ const ContactForm = React.createClass({
       name: '',
       email: '',
       message: '',
-      validationMessage: '',
+      validationMessage:'',
       sending: 'Send It',
       hasError: false,
       hasSucess: false,
@@ -26,8 +28,6 @@ const ContactForm = React.createClass({
   },
 
   componentDidMount() {
-    //console.log('added');
-    //ContactFormStore.fetchContactForm();\
     tl.to('.Form',.3,{autoAlpha:1})
     tl.paused(!tl.paused())
   },
@@ -80,15 +80,19 @@ const ContactForm = React.createClass({
   },
 
   resetForm(){
-    this.setState( {
-      name: '',
-      email: '',
-      message: '',
-      validationMessage: '',
-      sending: 'Send It',
-      hasError: false,
-      hasSucess: false
-    })
+    let self = this;
+    TweenLite.to('.happy-message',.3,{autoAlpha:0,display:'none',onComplete:function(){
+        self.setState( {
+          name: '',
+          email: '',
+          message: '',
+          validationMessage: '',
+          sending: 'Send It',
+          hasError: false,
+          hasSucess: false
+        })
+    }})
+    TweenLite.to('.ContactForm',.3,{autoAlpha:1,display:'block',delay:.5})
   },
 
   sendForm(data) {
@@ -148,7 +152,11 @@ const ContactForm = React.createClass({
         }
 
       } else {
+
         //SUCESSS
+        TweenLite.to('.ContactForm',.3,{autoAlpha:0,display:'none'})
+        TweenLite.to('.happy-message',.3,{autoAlpha:1,delay:.5,display:'block'})
+
         self.setState({
           validationMessage: 'Well done! I will read your joyful message and then say anything or not. Thank you',
           hasError: false,
@@ -158,12 +166,10 @@ const ContactForm = React.createClass({
     })
   },
 
+
   render() {
     let self = this;
 
-    //console.log(this.props.animationIn);
-
-    //console.log(self.state.validationMessage);
     if(this.state.form && this.state.count===0) {
       tl.seek(0);
       tl.paused(!tl.paused())
@@ -178,13 +184,13 @@ const ContactForm = React.createClass({
 
     let formClasses = cx({
       'ContactForm' : true,
-      'fadeout' : this.state.hasSucess
+      //'fadeout' : this.state.hasSucess
     });
 
     let happyMessageClasses = cx({
-      'happy-message message-box fade' : true,
-      'out' : !this.state.hasSucess,
-      'in' : this.state.hasSucess
+      'happy-message' : true//,
+      // 'out' : !this.state.hasSucess,
+      // 'in' : this.state.hasSucess
     });
 
     return (
@@ -196,16 +202,20 @@ const ContactForm = React.createClass({
                 <div className="alert alert-danger message-box" role="alert">
                   {this.state.validationMessage}
                 </div>
-              :
-                <div className={happyMessageClasses}>
-                  {this.state.validationMessage}
-                   <button className="btn btn-primary" onClick={this.resetForm}>Send me Another Happy Message</button>
-                </div>
+              : <div/>
+
           }
           </div>
         </div>
         <div className={ContactFormClass}>
-
+          <div className="logo-on-form w25 center">
+            <img className="img-responsive" src={appConfig.themeURL+"/images/mnsl-v3-white.svg"} />
+          </div>
+          <div className="copy-form center color-white">
+              <h3>Now talking seriously.</h3>
+              <p>Feel free to contact me. Whether to say hello or even to know more about me.</p>
+              <p>It can be a beginning of a good friendship.</p>
+          </div>
           <form className={formClasses} onSubmit={this.onSubmit} ref="form">
 
           {
@@ -223,7 +233,7 @@ const ContactForm = React.createClass({
                   let onChange = tempInputState === 'email' ? self.changeEmail : self.changeName;
                   return (
                     <div className="form-group" key={input.label}>
-                      <input className="form-control" type={input.type} placeholder={input.label} value={state} onChange={onChange} key={id} id={id} ref={id} noValidate/>
+                      <input className="form-control" type={input.type} placeholder={input.label+"*"} value={state} onChange={onChange} key={id} id={id} ref={id} noValidate/>
                     </div>
                   )
                 } else {
@@ -231,17 +241,30 @@ const ContactForm = React.createClass({
                   let onChange = self.changeMessage;
                   return (
                     <div className="form-group" key={input.label}>
-                      <textarea className="form-control" placeholder={input.label} value={state} onChange={onChange} id={id} key={id} />
+                      <textarea className="form-control" placeholder={input.label+"*"} value={state} onChange={onChange} id={id} key={id} />
                     </div>
                   )
                 }
               })
             : <div/>
           }
+
             <button className="bt-send-it btn btn-primary text-uppercase" >
               {this.state.sending}
             </button>
+            <div className="center margin-t-20 color-white">
+            <small>* required</small>
+            </div>
           </form>
+          {
+            !this.state.hasError ?
+              <div className={happyMessageClasses}>
+                  <div className="center color-white">{this.state.validationMessage}</div>
+
+                  <button className="bt-resend-it btn btn-primary" onClick={this.resetForm}>Send me Another Happy Message</button>
+              </div>
+            : <div/>
+          }
         </div>
       </div>
     );
