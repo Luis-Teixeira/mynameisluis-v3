@@ -1,7 +1,7 @@
 .ContactForm {
   @extend .animated-faster;
   &.fadeout {
-    opacity: 0;
+    opacity: 0 !important;
   }
 }
 
@@ -9,8 +9,53 @@
   @extend .animated-faster;
   &.fade {
     opacity: 0;
+    visibility: hidden;
     &.in {
       opacity: 1;
+      visibility: inherit;
     }
+  }
+}
+
+.Form {
+  opacity: 0;
+  @extend .col-md-8,
+          .col-md-push-2,
+
+          .text-center;
+
+  padding-top: 240px;
+
+  .form-control {
+    @extend .color-white;
+    background-color: transparent;
+    border: 2px solid $color-white;
+    @include placeholder(#fff);
+  }
+
+  .bt-send-it {
+    width: 180px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid $color-white;
+    @extend .text-center,.animated,.margin-t-40,.no-outline;
+    border-radius: 20px;
+    &:hover {
+      width: 190px;
+    }
+  }
+}
+
+.form-messages {
+  @extend .position-abs,
+          .text-center,
+          .w100;
+
+  left: 0;
+
+  .message-box {
+    @extend .col-md-8,
+            .col-md-push-2,
+            .margin-t-100;
   }
 }

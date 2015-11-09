@@ -4,37 +4,70 @@ import ContactForm from './ContactForm'
 import GSAP from 'gsap'
 
 var tweenForm = new TimelineLite();
+var waitForFinalEvent = (function () {
+  var timers = {};
+  return function (callback, ms, uniqueId) {
+    if (!uniqueId) { uniqueId = "Don't call this twice without a uniqueId"; }
+    if (timers[uniqueId]) { clearTimeout (timers[uniqueId]); }
+    timers[uniqueId] = setTimeout(callback, ms);
+  };
+})();
+
 
 class Footer extends React.Component {
 
-  componentDidMount() {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showForm : false
+    };
+  }
+
+  componentDidMount() {
+    let self = this;
     let formTrigger = jQuery('.form-trigger');
     let ftPosition = formTrigger.offset();
 
+    window.addEventListener('resize', this.handleResize);
+
     jQuery('body').css('overflow:hidden');
     //console.log(ftPosition.left, ftPosition.top);
-    TweenLite.set('.form-bg-fx',{scale:1,autoAlpha:0 ,top:ftPosition.top, left:ftPosition.left+82,transformOrigin: "50% 50% 0"})
+    TweenLite.set('.form-bg-fx',{scale:1,autoAlpha:0 ,top:ftPosition.top, left:ftPosition.left+100,transformOrigin: "50% 50% 0"})
     //let formBgFx = jQuery('.form-bg-fx');
-    tweenForm.to('.form-trigger',.3,{className:"+=toAlphaText"})
+    tweenForm.to('.form-trigger',.3,{className:"+=toAlphaText",onReverseComplete:function(){self.setState({ showForm:false }) }})
     tweenForm.to('.form-trigger',.3,{className:"+=toCircle"})
     tweenForm.to('body',0,{className:"+=overflow-hidden"})
     tweenForm.to('.form-bg-fx',0,{autoAlpha:1, force3D:true})
-    tweenForm.to('.form-bg-fx',.4,{scale:100, force3D:true})
-    tweenForm.to('.ContactForm-warper',.5,{autoAlpha:1})
+    tweenForm.to('.form-bg-fx',.6,{scale:100, force3D:true})
+    tweenForm.to('.ContactForm-warper',.4,{autoAlpha:1})
+    tweenForm.from('.btn-close-form',.4,{autoAlpha:0,scale:0, transformOrigin: "50% 50% 0",ease:Back.easeInOut.config(4),onComplete:function(){ self.setState({ showForm:true }) }})
+
     tweenForm.pause();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
 
   showFormPop(){
     let ftPosition = jQuery('.form-trigger').offset();
-    TweenLite.set('.form-bg-fx',{top:ftPosition.top, left:ftPosition.left+82})
+    TweenLite.set('.form-bg-fx',{top:ftPosition.top, left:ftPosition.left+100})
     tweenForm.seek(0);
     tweenForm.play();
   }
 
   closeFormPop(){
     tweenForm.reverse();
+  }
+
+  handleResize(){
+    let timeToWaitForLast = 100;
+    waitForFinalEvent( function() {
+      let ftPosition = jQuery('.form-trigger').offset();
+      TweenLite.set('.form-bg-fx',{top:ftPosition.top, left:ftPosition.left+100})
+    }, timeToWaitForLast, "formFXresizer");
   }
 
   render() {
@@ -46,22 +79,23 @@ class Footer extends React.Component {
               Say Hi! It's free
             </div>
             <div className="Form-title-subtitle text-uppercase">
-              <small>or if want to work together</small>
+              <small>(dont by shy if want to work together or if want to buy me a some beer)</small>
             </div>
             <div className="position-rel1">
-              <button type="button" className="form-trigger btn btn-primary" ref="formTrigger" onClick={this.showFormPop} >start here</button>
+              <button type="button" className="form-trigger btn btn-primary text-uppercase" ref="formTrigger" onClick={this.showFormPop} >start here</button>
               <div className="form-bg-fx" ref="formBgFx" />
             </div>
           </div>
         </div>
-        <div className="ContactForm-warper">
-          <div className="showFormPop">
-
-            <button type="button" className="btn btn-primary no-outline" ref="formTrigger" onClick={this.closeFormPop} >X</button>
-
+        <div className="ContactForm-warper w100">
+          <div className="showFormPop container">
+            <div >
+              <button type="button" className="btn btn-primary no-outline btn-close-form" ref="formTrigger" onClick={this.closeFormPop} >X</button>
+            </div>
+            {
+              this.state.showForm ? <ContactForm animationIn='false' /> : <div/>
+            }
           </div>
-          <ContactForm animationIn='false' />
-
         </div>
       </div>
     );

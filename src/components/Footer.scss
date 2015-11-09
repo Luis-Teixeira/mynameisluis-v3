@@ -18,16 +18,18 @@
 
 
   border-radius: 20px;
-  width: 155px;
+  width: 190px;
   height: 40px;
 
   &:hover {
-    width: 165px;
+    width: 200px;
     background: $brand-primary;
     border-color: $brand-primary;
   }
 
-  &:focus {
+  &:focus,
+  &:active,
+  &:focus:active {
     outline-color: transparent;
     outline-width: 0;
     background: $brand-primary;
@@ -69,4 +71,26 @@
   z-index: 1010;
   opacity: 0;
   visibility: hidden;
+}
+
+.btn-close-form {
+  @extend .round, .position-abs,.as-inline-block;
+
+  top: 100px;
+  right: 100px;
+  background-image: url('images/cd-icon-close.svg');
+  background-color: rgba(0,0,0,.2);
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(0,0,0,.01);
+  color: transparent;
+  text-indent: -9999px;
+  z-index: 1;
+  &:hover {
+    color: transparent;
+    text-indent: -9999px;
+  }
+  &:active {
+    background-image: url('images/cd-icon-close.svg');
+  }
 }

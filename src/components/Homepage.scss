@@ -2,7 +2,7 @@
   @extend .bg-color-white;
           //.animated-super-faster;
 
-  transition : transform 400ms;
+  transition : transform 300ms;
   transition-timing-function: cubic-bezier(.725, 0, .330, 1.430);
   &.with-overlay {
     transform: scale(.90);

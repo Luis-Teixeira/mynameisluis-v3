@@ -22,6 +22,7 @@ const ContactFormStore = Reflux.createStore({
       .end( function( error, result ) {
           self.updateList(JSON.parse( result.text ));
           //console.log(result.text);
+          //return result.text ? true : false;
       });
   },
 
@@ -30,15 +31,15 @@ const ContactFormStore = Reflux.createStore({
     let loadedList = localStorage.getItem(localStorageKey);
 
     // //console.log('local (há? )->' , loadedList  );
-    // if (!loadedList || loadedList === 'undefined') {
-    //    this.fetchContactForm();
-    // } else {
+    if (!loadedList || loadedList === 'undefined') {
+        this.fetchContactForm();
+    } else {
     // //   //this.trigger(this.form);
     // //   //JUST FOR DEBUG
     //    this.fetchContactForm(); //
-    //    this.updateList(JSON.parse(loadedList));
+        this.updateList(JSON.parse(loadedList));
     // //   //this.compareLatestsID();
-    // }
+    }
     //console.log('local else ->', this.form);
     return this.form;
 

@@ -295,7 +295,9 @@ $color-black: #000;
 }
 
 .no-outline {
-  &:focus{
+  &:focus,
+  &:active,
+  &:focus:active{
     outline-color: transparent;
     outline-width: 0;
   }

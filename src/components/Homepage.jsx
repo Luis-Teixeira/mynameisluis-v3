@@ -5,7 +5,10 @@ import cx from 'classnames'
 import AboutHp from './AboutSectionHP.jsx'
 import Facts from './Facts.jsx'
 import Posts from './Posts.jsx'
-import Helmet from "react-helmet";
+import Helmet from "react-helmet"
+import GSAP from 'gsap'
+import ScrollToPlugin from 'gsap/src/uncompressed/plugins/ScrollToPlugin.js'
+
 
 const Homepage = React.createClass({
 
@@ -20,23 +23,24 @@ const Homepage = React.createClass({
 
   singleHandler(props){
     let self = this;
-    let delay = 550;
+    let delay = 450;
 
     if(props.location.pathname.split("/")[1] === 'portfolio') {
       //FORWARD
-
-      jQuery("html, body").animate({ scrollTop: "0px" });
-
-      this.setState({
-        'singlePostInited':true,
-        'showSingle':true
-      });
-
-      setTimeout(function(){
+      TweenLite.to(jQuery(window),.3,{scrollTo:{y:0}, ease:Power4.easeOut,onComplete:function(){
         self.setState({
-          'showSingleContent' : true
+          'singlePostInited':true,
+          'showSingle':true
         });
-      },delay);
+
+        setTimeout(function(){
+          self.setState({
+            'showSingleContent' : true
+          });
+        },delay);
+      }})
+      //jQuery("html, body").animate({ scrollTop: "0px" });
+
     } else {
       //REVERSE
       this.setState({

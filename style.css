@@ -250,14 +250,14 @@ img {
   height: auto; }
 
 .img-rounded {
-  border-radius: 2px; }
+  border-radius: 4px; }
 
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -396,7 +396,7 @@ mark,
 .text-right, .Header .nav {
   text-align: right; }
 
-.text-center, .AboutSectionHP .the-content, .Facts {
+.text-center, .AboutSectionHP .the-content, .Facts, .Form, .Form .bt-send-it, .form-messages {
   text-align: center; }
 
 .text-justify {
@@ -648,7 +648,7 @@ address {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .Header .nav, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .AboutSectionHP .the-content, .Facts .swiper-container, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .Header .nav, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .AboutSectionHP .the-content, .Facts .swiper-container, .Form, .form-messages .message-box, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -917,7 +917,7 @@ address {
     margin-left: 100%; } }
 
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .Header .nav, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .AboutSectionHP .the-content, .Facts .swiper-container, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .Header .nav, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .AboutSectionHP .the-content, .Facts .swiper-container, .Form, .form-messages .message-box, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left; }
   .col-md-1 {
     width: 8.33333%; }
@@ -933,7 +933,7 @@ address {
     width: 50%; }
   .col-md-7 {
     width: 58.33333%; }
-  .col-md-8, .AboutSectionHP .the-content, .Facts .swiper-container {
+  .col-md-8, .AboutSectionHP .the-content, .Facts .swiper-container, .Form, .form-messages .message-box {
     width: 66.66667%; }
   .col-md-9 {
     width: 75%; }
@@ -973,7 +973,7 @@ address {
     left: auto; }
   .col-md-push-1 {
     left: 8.33333%; }
-  .col-md-push-2 {
+  .col-md-push-2, .Form, .form-messages .message-box {
     left: 16.66667%; }
   .col-md-push-3 {
     left: 25%; }
@@ -1198,7 +1198,7 @@ output {
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
@@ -1341,7 +1341,7 @@ fieldset[disabled]
   padding: 5px 10px;
   font-size: 16px;
   line-height: 1.5;
-  border-radius: 2px; }
+  border-radius: 4px; }
 
 select.input-sm {
   height: 36px;
@@ -1356,7 +1356,7 @@ select[multiple].input-sm {
   padding: 5px 10px;
   font-size: 16px;
   line-height: 1.5;
-  border-radius: 2px; }
+  border-radius: 4px; }
 
 .form-group-sm select.form-control {
   height: 36px;
@@ -1378,7 +1378,7 @@ select[multiple].input-sm {
   padding: 10px 16px;
   font-size: 23px;
   line-height: 1.33333;
-  border-radius: 2px; }
+  border-radius: 4px; }
 
 select.input-lg {
   height: 53px;
@@ -1393,7 +1393,7 @@ select[multiple].input-lg {
   padding: 10px 16px;
   font-size: 23px;
   line-height: 1.33333;
-  border-radius: 2px; }
+  border-radius: 4px; }
 
 .form-group-lg select.form-control {
   height: 53px;
@@ -1633,7 +1633,7 @@ select[multiple].input-lg {
   padding: 6px 12px;
   font-size: 18px;
   line-height: 1.42857;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1927,19 +1927,19 @@ fieldset[disabled] a.btn {
   padding: 10px 16px;
   font-size: 23px;
   line-height: 1.33333;
-  border-radius: 2px; }
+  border-radius: 4px; }
 
 .btn-sm {
   padding: 5px 10px;
   font-size: 16px;
   line-height: 1.5;
-  border-radius: 2px; }
+  border-radius: 4px; }
 
 .btn-xs {
   padding: 1px 5px;
   font-size: 16px;
   line-height: 1.5;
-  border-radius: 2px; }
+  border-radius: 4px; }
 
 .btn-block {
   display: block;
@@ -1957,7 +1957,7 @@ input[type="button"].btn-block {
   padding: 15px;
   margin-bottom: 25px;
   border: 1px solid transparent;
-  border-radius: 2px; }
+  border-radius: 4px; }
   .alert h4 {
     margin-top: 0;
     color: inherit; }
@@ -2550,7 +2550,7 @@ input[type="button"].btn-block {
 .margin-40 {
   margin: 40px; }
 
-.margin-t-40, .form-trigger {
+.margin-t-40, .form-trigger, .Form .bt-send-it {
   margin-top: 40px; }
 
 .margin-r-40 {
@@ -2850,7 +2850,7 @@ input[type="button"].btn-block {
 .margin-100 {
   margin: 100px; }
 
-.margin-t-100 {
+.margin-t-100, .form-messages .message-box {
   margin-top: 100px; }
 
 .margin-r-100 {
@@ -3000,16 +3000,16 @@ input[type="button"].btn-block {
 .as-flex, .Post_link, .ImageLoader, .who, .who-name {
   display: flex; }
 
-.as-inline-block {
+.as-inline-block, .btn-close-form {
   display: inline-block; }
 
 .position-rel, .Post {
   position: relative; }
 
-.position-abs, .form-bg-fx, .Post:before, .Post_link, .SinglePost-warper {
+.position-abs, .form-bg-fx, .btn-close-form, .Post:before, .Post_link, .SinglePost-warper, .form-messages {
   position: absolute; }
 
-.round, .form-bg-fx {
+.round, .form-bg-fx, .btn-close-form {
   border-radius: 50%; }
 
 .no-border-radius {
@@ -3034,7 +3034,7 @@ input[type="button"].btn-block {
 .align-items-center {
   align-items: center; }
 
-.w100, .SinglePost-warper {
+.w100, .SinglePost-warper, .form-messages {
   width: 100%; }
 
 .w75 {
@@ -3133,7 +3133,7 @@ input[type="button"].btn-block {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-.color-white, .Post_link, .Post_link a {
+.color-white, .Post_link, .Post_link a, .Form .form-control {
   color: #fff; }
 
 .bg-color-white, .Homepage-warper, .SinglePost-warper {
@@ -3214,7 +3214,7 @@ input[type="button"].btn-block {
 .no-shadow {
   box-shadow: 0 0 0 0; }
 
-.no-outline:focus {
+.no-outline:focus, .Form .bt-send-it:focus, .no-outline:active, .Form .bt-send-it:active, .no-outline:focus:active, .Form .bt-send-it:focus:active {
   outline-color: transparent;
   outline-width: 0; }
 
@@ -3223,13 +3223,14 @@ input[type="button"].btn-block {
 .lazy-load,
 .Post,
 .Post_link,
-.image {
+.image,
+.Form .bt-send-it {
   transition: all 500ms; }
   .transition-all .slower,
-  .animated .slower, .lazy-load .slower, .Post .slower, .Post_link .slower, .image .slower {
+  .animated .slower, .lazy-load .slower, .Post .slower, .Post_link .slower, .image .slower, .Form .bt-send-it .slower {
     transition: all 750ms; }
   .transition-all .faster,
-  .animated .faster, .lazy-load .faster, .Post .faster, .Post_link .faster, .image .faster {
+  .animated .faster, .lazy-load .faster, .Post .faster, .Post_link .faster, .image .faster, .Form .bt-send-it .faster {
     transition: all 250ms; }
 
 .animated-super-slower {
@@ -3259,7 +3260,7 @@ body {
   min-height: 220px; }
 
 .Homepage-warper {
-  transition: transform 400ms;
+  transition: transform 300ms;
   transition-timing-function: cubic-bezier(0.725, 0, 0.33, 1.43); }
   .Homepage-warper.with-overlay {
     transform: scale(0.9);
@@ -3274,13 +3275,13 @@ body {
 
 .form-trigger {
   border-radius: 20px;
-  width: 155px;
+  width: 190px;
   height: 40px; }
   .form-trigger:hover {
-    width: 165px;
+    width: 200px;
     background: #1489E0;
     border-color: #1489E0; }
-  .form-trigger:focus {
+  .form-trigger:focus, .form-trigger:active, .form-trigger:focus:active {
     outline-color: transparent;
     outline-width: 0;
     background: #1489E0;
@@ -3307,6 +3308,23 @@ body {
   z-index: 1010;
   opacity: 0;
   visibility: hidden; }
+
+.btn-close-form {
+  top: 100px;
+  right: 100px;
+  background-image: url("images/cd-icon-close.svg");
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(0, 0, 0, 0.01);
+  color: transparent;
+  text-indent: -9999px;
+  z-index: 1; }
+  .btn-close-form:hover {
+    color: transparent;
+    text-indent: -9999px; }
+  .btn-close-form:active {
+    background-image: url("images/cd-icon-close.svg"); }
 
 .Post {
   height: 400px; }
@@ -3416,12 +3434,39 @@ body {
     transform: translateY(140px) scale(1); }
 
 .ContactForm.fadeout {
-  opacity: 0; }
+  opacity: 0 !important; }
 
 .happy-message.fade {
-  opacity: 0; }
+  opacity: 0;
+  visibility: hidden; }
   .happy-message.fade.in {
-    opacity: 1; }
+    opacity: 1;
+    visibility: inherit; }
+
+.Form {
+  opacity: 0;
+  padding-top: 240px; }
+  .Form .form-control {
+    background-color: transparent;
+    border: 2px solid #fff; }
+    .Form .form-control::-moz-placeholder {
+      color: #fff;
+      opacity: 1; }
+    .Form .form-control:-ms-input-placeholder {
+      color: #fff; }
+    .Form .form-control::-webkit-input-placeholder {
+      color: #fff; }
+  .Form .bt-send-it {
+    width: 180px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px; }
+    .Form .bt-send-it:hover {
+      width: 190px; }
+
+.form-messages {
+  left: 0; }
 
 /**
  * Swiper 3.1.7
