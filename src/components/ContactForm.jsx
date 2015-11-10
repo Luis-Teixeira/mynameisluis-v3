@@ -153,15 +153,15 @@ const ContactForm = React.createClass({
 
       } else {
 
-        //SUCESSS
-        TweenLite.to('.ContactForm',.3,{autoAlpha:0,display:'none'})
-        TweenLite.to('.happy-message',.3,{autoAlpha:1,delay:.5,display:'block'})
-
         self.setState({
           validationMessage: 'Well done! I will read your joyful message and then say anything or not. Thank you',
           hasError: false,
           hasSucess: true
         });
+
+        //SUCESSS
+        TweenLite.to('.ContactForm',.3,{autoAlpha:0,display:'none'})
+        TweenLite.to('.happy-message',.3,{autoAlpha:1,delay:.5,display:'block'})
       }
     })
   },
@@ -216,7 +216,7 @@ const ContactForm = React.createClass({
               <p>Feel free to contact me. Whether to say hello or even to know more about me.</p>
               <p>It can be a beginning of a good friendship.</p>
           </div>
-          <form className={formClasses} onSubmit={this.onSubmit} ref="form">
+          <form className={formClasses} onSubmit={this.onSubmit} ref="form" noValidate>
 
           {
             this.state.form ?
@@ -260,7 +260,6 @@ const ContactForm = React.createClass({
             !this.state.hasError ?
               <div className={happyMessageClasses}>
                   <div className="center color-white">{this.state.validationMessage}</div>
-
                   <button className="bt-resend-it btn btn-primary" onClick={this.resetForm}>Send me Another Happy Message</button>
               </div>
             : <div/>

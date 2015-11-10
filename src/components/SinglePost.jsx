@@ -2,6 +2,7 @@ import React from 'react'
 import PostsStore from '../stores/PostsStore.jsx'
 import { RouteHandler , Lifecycle , State ,RouteContext, History } from 'react-router'
 import Helmet from "react-helmet";
+import ImageLoader from './ImageLoader'
 
 
 const SinglePost = React.createClass({
@@ -21,15 +22,21 @@ const SinglePost = React.createClass({
   },
 
   componentDidMount() {
-    this.state.isVisible = true;
+    this.state.isVisible = false;
     //console.log(this.state.isVisible);
   },
 
   componentWillReceiveProps(nextProps, prevProps) {
+
+    let self = this;
     this.setState({
-      fetchedData: PostsStore.fetchPostDetailBySlug(nextProps.params.postId),
-      isVisible: true
+      fetchedData: PostsStore.fetchPostDetailBySlug(nextProps.params.postId)
     });
+    setTimeout(function(){
+      self.setState({
+        isVisible: true
+      })
+    },750);
   },
 
   shouldComponentUpdate(nextProps, nextState){
@@ -59,11 +66,26 @@ const SinglePost = React.createClass({
 
   render() {
     let fetchedData = this.state.fetchedData;
-    //console.log(fetchedData,this.props.params.postId);
+    let acf = fetchedData.acf;
+
+    console.log(fetchedData);
     return (
-      <article>
+      <article className="SinglePost">
         <Helmet title={fetchedData.title.rendered+' | '+ appConfig.wordpressName} />
-        <div className='container'>{fetchedData.title.rendered}</div>
+        {
+          this.state.isVisible ?
+          <div className='container'>
+            <ImageLoader imageSrc={acf.imagem_banner.sizes.banner_image}/>
+
+            <div className='stagger'>
+              <h2 className="the-title text-center text-uppercase margin-t-60">{fetchedData.title.rendered}</h2>
+              <div className="the-content col-md-8 col-md-push-2 margin-t-60" dangerouslySetInnerHTML={{__html: fetchedData.content.rendered }} />
+
+
+            </div>
+          </div>
+          : <div />
+        }
       </article>
     );
   }

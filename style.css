@@ -3036,7 +3036,7 @@ input[type="button"].btn-block {
 .as-inline-block, .btn-close-form {
   display: inline-block; }
 
-.position-rel, .Post {
+.position-rel, .Post, .ImageLoader {
   position: relative; }
 
 .position-abs, .form-bg-fx, .btn-close-form, .Post:before, .Post_link, .SinglePost-warper, .form-messages {
@@ -3540,9 +3540,9 @@ body {
     .Form .bt-resend-it:hover {
       width: 190px; }
   .Form .bt-resend-it {
-    width: 300px; }
+    width: 310px; }
     .Form .bt-resend-it:hover {
-      width: 310px; }
+      width: 320px; }
 
 .form-messages {
   left: 0; }

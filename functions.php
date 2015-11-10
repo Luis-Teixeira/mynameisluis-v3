@@ -47,6 +47,7 @@ function wpapi_setup() {
 }
 endif; // wpapi_setup
 add_action( 'after_setup_theme', 'wpapi_setup' );
+add_image_size( 'banner_image', 970, 400, true );
 
 /**
  * Workpress Enqueues
