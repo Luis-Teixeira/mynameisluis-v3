@@ -72,6 +72,13 @@
   width: 25%;
 }
 
+.w10{
+  width: 10%;
+}
+.w5{
+  width: 5%;
+}
+
 // FONT
 .font-smoothing {
   -moz-osx-font-smoothing: grayscale;
@@ -196,6 +203,10 @@ $color-black: #000;
 
 .color-black {
   color: $color-black;
+}
+
+.bg-color-black {
+  background-color: $color-black;
 }
 
 .text-color {

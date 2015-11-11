@@ -18,6 +18,30 @@
   &.in {
     transform: translateY(140px) scale(1);
   }
+
+  .close-btn {
+    top: 20px;
+    right: 40px;
+    @extend .animated-faster;
+  }
+}
+
+.SinglePost-footer {
+  @extend .margin-b-60;
+  opacity: 0;
+
+  .btn {
+
+    width: 180px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid $brand-primary;
+    @extend .brand-primary,.text-center,.animated,.margin-t-40,.no-outline;
+    border-radius: 20px;
+    &:hover {
+      width: 190px;
+    }
+  }
 }
 
 .the-role-loop {

@@ -72,29 +72,49 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className="Footer ">
-        <div className="container">
-          <div className="Form-title text-center color-white">
-            <div className="Form-title-main font-size-h3  text-uppercase ">
-              Say Hi! It's free
+      <div>
+        <div className="Footer ">
+          <div className="container">
+            <div className="Form-title text-center color-white">
+              <div className="Form-title-main font-size-h3  text-uppercase ">
+                Say Hi! It's free
+              </div>
+              <div className="Form-title-subtitle text-uppercase">
+                <small>(dont by shy if want to work together or if want to buy me a some beer)</small>
+              </div>
+              <div className="position-rel1">
+                <button type="button" className="form-trigger btn btn-primary text-uppercase" ref="formTrigger" onClick={this.showFormPop} >start here</button>
+                <div className="form-bg-fx" ref="formBgFx" />
+              </div>
             </div>
-            <div className="Form-title-subtitle text-uppercase">
-              <small>(dont by shy if want to work together or if want to buy me a some beer)</small>
-            </div>
-            <div className="position-rel1">
-              <button type="button" className="form-trigger btn btn-primary text-uppercase" ref="formTrigger" onClick={this.showFormPop} >start here</button>
-              <div className="form-bg-fx" ref="formBgFx" />
+          </div>
+          <div className="ContactForm-warper w100">
+            <div className="showFormPop container">
+              <div >
+                <button type="button" className="btn btn-primary no-outline btn-close-form" ref="formTrigger" onClick={this.closeFormPop} >X</button>
+              </div>
+              {
+                this.state.showForm ? <ContactForm animationIn='false' /> : <div/>
+              }
             </div>
           </div>
         </div>
-        <div className="ContactForm-warper w100">
-          <div className="showFormPop container">
-            <div >
-              <button type="button" className="btn btn-primary no-outline btn-close-form" ref="formTrigger" onClick={this.closeFormPop} >X</button>
+        <div className="extra-info">
+          <div className="container">
+            <div className="footer-logo">
+              <img className="img-responsive" src={appConfig.themeURL+"/images/mnsl-v3-white.svg"} />
             </div>
-            {
-              this.state.showForm ? <ContactForm animationIn='false' /> : <div/>
-            }
+            <div className="info-links">
+              <p>Handcode be me with love</p>
+              <p><small>with</small></p>
+              <div className="links-warpers">
+                <a className="footer-icon-btn" href="https://facebook.github.io/react/" title="" target='_blank'><i className="icon-react"></i></a>
+                <a className="footer-icon-btn" href="http://wp-api.org/" title="" target='_blank'><i className="icon-wordpress"></i></a>
+                <a className="footer-icon-btn" href="https://pt.linkedin.com/in/luispteixeira" title="" target='_blank'><i className="icon-linkedin"></i></a>
+                <a className="footer-icon-btn" href="https://github.com/Luis-Teixeira" title="" target='_blank'><i className="icon-github-circled"></i></a>
+                <a className="footer-icon-btn" href="mailto:luispteixeira@gmail.com" title="" target='_blank'><i className="icon-mail"></i></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
