@@ -2332,7 +2332,7 @@ input[type="button"].btn-block {
 .padding-r-5 {
   padding-right: 5px; }
 
-.padding-b-5 {
+.padding-b-5, .the-role-loop {
   padding-bottom: 5px; }
 
 .padding-l-5 {
@@ -2386,7 +2386,7 @@ input[type="button"].btn-block {
 .padding-15 {
   padding: 15px; }
 
-.padding-t-15, .Post_link {
+.padding-t-15, .Post_link, .the-role-loop {
   padding-top: 15px; }
 
 .padding-r-15 {
@@ -2401,7 +2401,7 @@ input[type="button"].btn-block {
 .margin-15 {
   margin: 15px; }
 
-.margin-t-15 {
+.margin-t-15, .the-role-loop {
   margin-top: 15px; }
 
 .margin-r-15 {
@@ -2425,7 +2425,7 @@ input[type="button"].btn-block {
 .padding-b-20 {
   padding-bottom: 20px; }
 
-.padding-l-20, .Post_link {
+.padding-l-20, .Post_link, .the-role-loop {
   padding-left: 20px; }
 
 .margin-20 {
@@ -2461,13 +2461,13 @@ input[type="button"].btn-block {
 .margin-25 {
   margin: 25px; }
 
-.margin-t-25 {
+.margin-t-25, .loop-images .image {
   margin-top: 25px; }
 
 .margin-r-25 {
   margin-right: 25px; }
 
-.margin-b-25 {
+.margin-b-25, .loop-images .image {
   margin-bottom: 25px; }
 
 .margin-l-25 {
@@ -2679,7 +2679,7 @@ input[type="button"].btn-block {
 .margin-r-60 {
   margin-right: 60px; }
 
-.margin-b-60 {
+.margin-b-60, .the-role-loop {
   margin-bottom: 60px; }
 
 .margin-l-60 {
@@ -3513,6 +3513,9 @@ body {
     display: block; }
   .SinglePost-warper.in {
     transform: translateY(140px) scale(1); }
+
+.the-role-loop {
+  border-left: 4px solid #1C95B6; }
 
 .happy-message {
   opacity: 0; }

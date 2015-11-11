@@ -19,3 +19,17 @@
     transform: translateY(140px) scale(1);
   }
 }
+
+.the-role-loop {
+  @extend .margin-t-15,
+          .padding-l-20,
+          .padding-t-15,
+          .padding-b-5,
+          .margin-b-60;
+  border-left: 4px solid $brand-primary;
+}
+
+.loop-images .image {
+  @extend .margin-b-25,
+          .margin-t-25;
+}
