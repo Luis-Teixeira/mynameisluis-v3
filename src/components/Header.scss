@@ -16,6 +16,9 @@
 
   .nav-link {
     @extend .margin-l-20;
+    &.active {
+      color: $link-hover-color;
+    }
   }
 
   .logo {

@@ -14,6 +14,32 @@ body {
   }
 }
 
+$time: .3s;
+$easing: ease-in-out;
+.page-transition-enter {
+  transition: opacity $time $easing, transform $time $easing;
+  transition-delay: .5,0;
+  opacity: 0;
+  transform: translateY(20px);
+
+}
+.page-transition-enter.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+
+
+}
+.page-transition-leave {
+  transition: opacity $time $easing, transform $time $easing;
+  transition-delay: .5,0;
+  opacity: 0;
+  transform: translateY(0);
+}
+.page-transition-leave.page-transition-leave-active {
+  opacity: 0;
+  transform: translateY(0);
+
+}
 
 @-webkit-keyframes fadeOut {
   0%   {opacity: 1;}

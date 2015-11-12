@@ -8,7 +8,7 @@
   min-width: 100%;
 }
 
-$main: transparentize($secundary-color,.5);
+$main: transparentize($brand-primary,.5);
 $secondary: darken($main, 10);
 $r: 15;
 $d: $r * 2;

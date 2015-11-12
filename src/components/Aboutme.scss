@@ -1,0 +1,22 @@
+.Aboutme {
+  @extend .bg-color-white;
+  min-height: 100vh;
+
+  .avatar {
+    @extend .center, .round,.overflow-hidden, .margin-b-60,.bg-gray-lighter;
+    width: 150px;
+    height: 150px;
+    img {
+      @extend .round;
+      width: 150px;
+      height: 150px;
+    }
+  }
+  .the-aboutme-links {
+    @extend .text-center,.margin-t-50;
+  }
+
+  .footer-icon-btn {
+    @extend .bg-gray-light,.color-white;
+  }
+}

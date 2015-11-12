@@ -90,8 +90,8 @@ const SinglePost = React.createClass({
           this.state.isVisible ?
 
           <div className='container position-rel'>
-            <Link to={`/`} className="btn btn-primary no-outline close-btn">X</Link>
-            { acf.imagem_banner ? <ImageLoader imageSrc={acf.imagem_banner.sizes.banner_image}/> : <div/> }
+            <Link to={`/`} className="btn btn-primary btn-link padding-l-0 font-100">Back</Link>
+            { acf.imagem_banner ? <ImageLoader imageSrc={acf.imagem_banner.sizes.banner_image}/>: <div/> }
 
             <div className=' col-md-8 col-md-push-2'>
               <h2 className="stagger the-title text-center text-uppercase margin-t-60">{fetchedData.title.rendered}</h2>

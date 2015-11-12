@@ -1,3 +1,4 @@
+
 .SinglePost-warper {
 
   @extend .position-abs,
@@ -16,14 +17,18 @@
   }
 
   &.in {
-    transform: translateY(140px) scale(1);
+    transform: translateY(151px) scale(1);
   }
 
   .close-btn {
-    top: 20px;
-    right: 40px;
+    //top: 20px;
+    //right: 40px;
     @extend .animated-faster;
+    top: 6px;
+    left: 4px;
+    //transform: scale(0.6);
   }
+
 }
 
 .SinglePost-footer {

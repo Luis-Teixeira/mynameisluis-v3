@@ -9,19 +9,21 @@ import Header from './Header.jsx'
 import Homepage from './Homepage.jsx'
 import Footer from './Footer.jsx'
 import SinglePost from './SinglePost.jsx'
+import AboutMe from './Aboutme.jsx'
 
 /* /?gf_page=preview&id=1  */
 
 const App = React.createClass({
 
   render: function()  {
-    var key = '';//(this.props.location.pathname.split("/")[1] !== '') ? '' : this.props.location.pathname;
+    let key = '';//(this.props.location.pathname.split("/")[1] === '' || this.props.location.pathname.split("/")[1] === 'portfolio') ? '' : this.props.location.pathname.split("/")[1];
+    console.log(key);
     return (
       <div className="app">
         <Header />
-        <div>
+        <ReactTransitionGroup component="div"  transitionName="page-transition">
           {React.cloneElement(this.props.children || <div />, { key: key })}
-        </div>
+        </ReactTransitionGroup>
         <Footer />
       </div>
     );
@@ -36,6 +38,8 @@ React.render((
       <Route name="index" path="index" component={Homepage} >
         <Route name="portfolio" path="/portfolio/:postId" component={SinglePost} />
       </Route>
+      <Route name="aboutme" path="about-me" component={AboutMe} />
+
     </Route>
   </Router>
 ), document.getElementById('main'));

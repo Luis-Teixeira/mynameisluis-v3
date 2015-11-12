@@ -40,7 +40,8 @@ class Header extends React.Component {
               <img className="img-responsive" src={appConfig.themeURL+"/images/mnsl-v3-color.svg"} />
             </Link>
             <nav className="nav">
-              <Link to={`/`} className="nav-link" activeClassName="active"> Home </Link>
+              <Link to={`/index`} className="nav-link" activeClassName="active"> Home </Link>
+              <Link to={`/about-me`} className="nav-link" activeClassName="active"> About </Link>
             </nav>
           </div>
         </div>
