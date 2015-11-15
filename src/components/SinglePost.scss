@@ -17,7 +17,11 @@
   }
 
   &.in {
-    transform: translateY(151px) scale(1);
+    transform: translateY(150px) scale(1);
+
+    // @media (max-width: $screen-xs-max) {
+    //   transform: translateY(150px) scale(1);
+    // }
   }
 
   .close-btn {

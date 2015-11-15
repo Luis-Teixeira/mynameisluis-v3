@@ -36,7 +36,7 @@ class Header extends React.Component {
       <header className="Header">
         <div className="container">
           <div className="row">
-            <Link  to="/" className="logo col-md-1 col-xs-1">
+            <Link  to="/" className="logo col-md-1 col-xs-2">
               <img className="img-responsive" src={appConfig.themeURL+"/images/mnsl-v3-color.svg"} />
             </Link>
             <nav className="nav">

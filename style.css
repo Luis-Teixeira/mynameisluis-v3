@@ -3162,7 +3162,7 @@ input[type="button"].btn-block {
 .w10 {
   width: 10%; }
 
-.w5, .footer-logo {
+.w5 {
   width: 5%; }
 
 .font-smoothing {
@@ -3450,6 +3450,13 @@ body {
 .Header .nav-link.active {
   color: #125f74; }
 
+.Header .logo,
+.Header .logo img {
+  min-height: 50px;
+  max-width: 50px;
+  width: 50px;
+  height: 50px; }
+
 .AboutSectionHP .the-content {
   min-height: 220px; }
 
@@ -3515,6 +3522,11 @@ body {
   color: transparent;
   text-indent: -9999px;
   z-index: 1; }
+  @media (max-width: 767px) {
+    .btn-close-form,
+    .close-btn {
+      top: 20px;
+      right: 20px; } }
   .btn-close-form:hover,
   .close-btn:hover {
     color: transparent;
@@ -3530,7 +3542,9 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  opacity: .8; }
+  opacity: .8;
+  width: 50px;
+  height: 50px; }
 
 .info-links p {
   font-size: 16px;
@@ -3550,6 +3564,9 @@ body {
     right: 0;
     background-color: transparent;
     z-index: 0; }
+  @media (max-width: 767px) {
+    .Post {
+      height: 300px; } }
 
 .Post_init:hover:before {
   background-color: rgba(0, 0, 0, 0.3); }
@@ -3654,7 +3671,7 @@ body {
   .SinglePost-warper.inited {
     display: block; }
   .SinglePost-warper.in {
-    transform: translateY(151px) scale(1); }
+    transform: translateY(150px) scale(1); }
   .SinglePost-warper .close-btn {
     top: 6px;
     left: 4px; }

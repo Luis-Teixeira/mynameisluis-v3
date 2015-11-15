@@ -4,6 +4,13 @@
           .padding-b-50;
 }
 
+.form-bg-fx-ovelay {
+  // @extend .overflow-hidden;
+
+  // width: 100vw;
+  // height: 100vh;
+}
+
 .Form-title-subtitle {
   small {
     font-size: 11px;
@@ -87,6 +94,13 @@
   color: transparent;
   text-indent: -9999px;
   z-index: 1;
+
+  @media (max-width: $screen-xs-max) {
+    top: 20px;
+    right: 20px;
+  }
+
+
   &:hover {
     color: transparent;
     text-indent: -9999px;
@@ -101,9 +115,11 @@
   background-color: darken($gray-dark,5%);
 }
 .footer-logo {
-  @extend .w5;
+  //@extend .w5;
   @include center-block();
   opacity: .8;
+  width: 50px;
+  height: 50px;
 }
 
 .info-links {

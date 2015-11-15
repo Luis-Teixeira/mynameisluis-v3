@@ -112,6 +112,7 @@ class Footer extends React.Component {
                 <a className="footer-icon-btn" href="http://wp-api.org/" title="" target='_blank'><i className="icon-wordpress"></i></a>
                 <a className="footer-icon-btn" href="https://pt.linkedin.com/in/luispteixeira" title="" target='_blank'><i className="icon-linkedin"></i></a>
                 <a className="footer-icon-btn" href="https://github.com/Luis-Teixeira" title="" target='_blank'><i className="icon-github-circled"></i></a>
+                <a className="footer-icon-btn" href="https://bitbucket.org/luispteixeira" title="" target='_blank'><i className="icon-bitbucket"></i></a>
                 <a className="footer-icon-btn" href="mailto:luispteixeira@gmail.com" title="" target='_blank'><i className="icon-mail"></i></a>
               </div>
             </div>
