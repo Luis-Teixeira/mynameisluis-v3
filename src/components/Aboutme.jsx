@@ -4,7 +4,6 @@ import Reflux from 'reflux';
 import ImageLoader from './ImageLoader'
 import Helmet from "react-helmet";
 
-
 const Aboutme = React.createClass({
 
   mixins: [Reflux.connect(AboutStore,"page")],

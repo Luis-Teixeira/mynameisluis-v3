@@ -1,7 +1,15 @@
 // Stash requires in variables
 var
   $ = require('gulp-load-plugins')(),
-	gulp = require( 'gulp' );
+	gulp = require( 'gulp' ),
+	browserify = require( 'browserify' ),
+	babelify = require('babelify'),
+	buffer = require( 'vinyl-buffer' ),
+	source = require( 'vinyl-source-stream' ),
+	uglify = require('gulp-uglify'),
+	autoprefixer = require('gulp-autoprefixer'),
+  minifycss = require('gulp-minify-css'),
+  rename = require('gulp-rename');
 
 // ERROR HANDLER
 
@@ -23,14 +31,10 @@ gulp.task('sass:dev', function () {
 
 });
 
-var
-	browserify = require( 'browserify' ),
-	babelify = require('babelify'),
-	buffer = require( 'vinyl-buffer' ),
-	source = require( 'vinyl-source-stream' );
+
 
 // JS
-	gulp.task('scripts', function () {
+	gulp.task('scripts:dev', function () {
 	  var bundler = browserify({
 	    entries: 'src/components/App.jsx',
 	    extensions: ['.jsx'],
@@ -60,7 +64,7 @@ var
 		gulp.watch('src/**/*.scss', ['sass:dev']);
 
 		// Watch .jsx files
-		gulp.watch('src/**/*.jsx', ['scripts']);
+		gulp.watch('src/**/*.jsx', ['scripts:dev']);
 	});
 
 // DEFAULT
@@ -68,6 +72,41 @@ var
 	gulp.task('default',function(){
 		//console.log('ole');
 	});
+
+	gulp.task('build', function() {
+
+		var bundler = browserify({
+	    entries: 'src/components/App.jsx',
+	    extensions: ['.jsx'],
+	    debug: true
+  	});
+		bundler.transform(babelify); // use the reactify transform
+
+		bundler.bundle()
+			.pipe( source( 'app.js' ) )
+			.pipe( buffer() )
+			.pipe(rename({suffix: '.min'}))
+			.pipe(uglify())
+			.pipe(gulp.dest( './js' ))
+			.pipe($.notify( { message: 'Styles task complete' } ));
+
+
+		gulp.src('./src/style.scss')
+			.pipe($.plumber())
+			//.pipr($.sourcemap.init())
+			.pipe($.sass( {
+				sourcemap: false,
+				sourcemapPath: '../scss',
+				style: 'expanded'
+			} ) )
+			.pipe(autoprefixer({
+         browsers: ['last 2 versions'],
+         cascade: false
+       }))
+			.pipe(rename({suffix: '.min'}))
+			.pipe(minifycss())
+			.pipe( gulp.dest( './' ) );
+});
 
 	//gulp.task('default', ['scripts']);
 

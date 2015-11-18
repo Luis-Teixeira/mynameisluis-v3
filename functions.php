@@ -1,4 +1,23 @@
 <?php
+
+// Set your environment/url pairs
+$environments = array(
+  'local'       => 'wpapi.dev',
+  // 'development' => 'development.website.com',
+  'staging'     => 'new.mynameisluis.dev',
+  'production'  => 'mynameisluis.com'
+);
+$http_host = $_SERVER['HTTP_HOST'];
+
+// Loop through $environments to see if there’s a match
+foreach($environments as $environment => $hostname) {
+  if (stripos($http_host, $hostname) !== FALSE) {
+    define('ENVIRONMENT', $environment);
+    break;
+  }
+}
+
+
 if ( ! function_exists( 'wpapi_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -56,17 +75,18 @@ add_image_size( 'banner_image', 970, 400, true );
  */
 
 function wpapi_scripts() {
-	wp_enqueue_style( 'wpapi-style', get_stylesheet_uri(), '20150831' );
-	wp_register_script( 'wpapi-script', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), '20150831', true );
+
+	$sufix = ENVIRONMENT == 'local' ? '' : '.min';
+	//_pr(get_template_directory_uri().'/style'.$sufix.'.css');
+
+	wp_enqueue_style( 'wpapi-style', get_template_directory_uri().'/style'.$sufix.'.css', '20150831' );
+	wp_register_script( 'wpapi-script', get_template_directory_uri() . '/js/app'.$sufix.'.js', array( 'jquery' ), '20150831', true );
 	wp_enqueue_script( 'wpapi-script' );
 
 	addGlobalVarToJavascript();
 }
 
 add_action( 'wp_enqueue_scripts', 'wpapi_scripts' );
-
-
-
 
 define('GF_PUBLIC_KEY','8562b7ac3b');
 define('GF_PRIVATE_KEY','72f9f8fb9dbe478');
