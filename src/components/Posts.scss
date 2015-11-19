@@ -1,5 +1,7 @@
 .Posts {
-  @extend .position-rel,
-
+   .loading-state {
+    @extend .margin-t-40,
+            .margin-b-120;
+  }
 }
 

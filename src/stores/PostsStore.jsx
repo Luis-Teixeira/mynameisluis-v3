@@ -2,8 +2,10 @@ import Reflux from 'reflux'
 import PostActions from '../actions/PostsActions.jsx'
 import request from 'superagent'
 import _ from 'lodash'
+import timeDifference from '../utils/TimeDifference'
 
 const localStorageKey = 'posts',
+      localStorageDateKey = 'post-date',
       apiUrl = '/wp-json/wp/v2',
       endPoint = '/portfolio';
 
@@ -19,8 +21,25 @@ var PostsStore = Reflux.createStore ({
     listenables: [PostActions],
 
     getInitialState(){
+      //let oldDate = '';
+      //let currentDate = new Date('Thu Nov 19 2015 11:49:23 +0000');
+      //console.log(appConfig.time);
 
+      // console.log(timeDifference.daysDifference(d2,d1));
+      let oldDate = localStorage.getItem(localStorageDateKey);
       let loadedList = localStorage.getItem(localStorageKey);
+
+      if( !oldDate || oldDate === 'undefined') {
+        localStorage.setItem(localStorageDateKey,appConfig.time);
+        //console.log(timeDifference.daysDifference(d2,d1));
+      }
+
+      let oldDateObj = new Date(oldDate);
+      //console.log(oldDateObj);
+      //console.log(timeDifference.daysDifference( new Date(), oldDateObj));
+      //console.log(timeDifference.hoursDifference( new Date(), oldDateObj));
+
+      //console.log(localStorage.getItem(localStorageDateKey));
 
       //console.log('local (há? )->' , loadedList  );
       if (!loadedList || loadedList === 'undefined') {
@@ -34,7 +53,6 @@ var PostsStore = Reflux.createStore ({
       return this.posts;
 
     },
-
 
     fetchPostDetailBySlug(postKey) {
       let foundPost = getPostByKey(this.posts,postKey);

@@ -2628,7 +2628,7 @@ input[type="button"].btn-block {
 .margin-40 {
   margin: 40px; }
 
-.margin-t-40, .form-trigger, .SinglePost-footer .btn, .Form .bt-send-it,
+.margin-t-40, .form-trigger, .Posts .loading-state, .SinglePost-footer .btn, .Form .bt-send-it,
 .Form .bt-resend-it, .form-messages .message-box {
   margin-top: 40px; }
 
@@ -2996,7 +2996,7 @@ input[type="button"].btn-block {
 .margin-r-120 {
   margin-right: 120px; }
 
-.margin-b-120 {
+.margin-b-120, .Posts .loading-state {
   margin-bottom: 120px; }
 
 .margin-l-120 {

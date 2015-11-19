@@ -96,6 +96,7 @@ function addGlobalVarToJavascript () {
 	$params = array(
 	  'themeURL' => get_stylesheet_directory_uri(),
 	  'wordpressName' => get_bloginfo('name'),
+    'time' => date('D M d Y H:i:s O')
 	);
 	wp_localize_script( 'wpapi-script', 'appConfig', $params );
 
