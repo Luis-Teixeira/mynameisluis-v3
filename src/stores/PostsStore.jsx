@@ -7,7 +7,8 @@ import timeDifference from '../utils/TimeDifference'
 const localStorageKey = 'posts',
       localStorageDateKey = 'post-date',
       apiUrl = '/wp-json/wp/v2',
-      endPoint = '/portfolio';
+      endPoint = '/portfolio',
+      loadEvery = appConfig.loadDataEvery;
 
 function getPostByKey(posts,postKey){
   return _.find(posts, function(post) {
@@ -20,38 +21,28 @@ var PostsStore = Reflux.createStore ({
 
     listenables: [PostActions],
 
-    getInitialState(){
-      //let oldDate = '';
-      //let currentDate = new Date('Thu Nov 19 2015 11:49:23 +0000');
-      //console.log(appConfig.time);
 
-      // console.log(timeDifference.daysDifference(d2,d1));
+    getInitialState(){
+
       let oldDate = localStorage.getItem(localStorageDateKey);
       let loadedList = localStorage.getItem(localStorageKey);
 
       if( !oldDate || oldDate === 'undefined') {
         localStorage.setItem(localStorageDateKey,appConfig.time);
-        //console.log(timeDifference.daysDifference(d2,d1));
       }
-
+      //console.log('--->', appConfig.loadDataEvery);
       let oldDateObj = new Date(oldDate);
-      //console.log(oldDateObj);
-      //console.log(timeDifference.daysDifference( new Date(), oldDateObj));
-      //console.log(timeDifference.hoursDifference( new Date(), oldDateObj));
 
-      //console.log(localStorage.getItem(localStorageDateKey));
+      if (!loadedList || loadedList === 'undefined' || timeDifference.daysDifference( new Date(), oldDateObj) > loadEvery) {
 
-      //console.log('local (há? )->' , loadedList  );
-      if (!loadedList || loadedList === 'undefined') {
+        localStorage.setItem(localStorageDateKey,appConfig.time);
         this.fetchPosts();
       } else {
-        //this.trigger(this.posts);
         this.updateList(JSON.parse(loadedList));
         //this.compareLatestsID();
       }
       //console.log('local else ->', this.posts);
       return this.posts;
-
     },
 
     fetchPostDetailBySlug(postKey) {
@@ -69,20 +60,6 @@ var PostsStore = Reflux.createStore ({
         .get( apiUrl + endPoint)
         .end( function( error, result ) {
             self.updateList(JSON.parse( result.text ));
-        });
-    },
-
-    compareLatestsID() {
-      let self = this;
-      let loadedList = localStorage.getItem(localStorageKey);
-      let storedListLastID = JSON.parse(loadedList)[0].id;
-
-      request
-        .get( apiUrl + endPoint + '?filter[posts_per_page]=1')
-        .end( function( error, result ) {
-          let serverListLastID = JSON.parse( result.text )[0].id;
-          //(storedListLastID === serverListLastID) ? self.updateList(JSON.parse(loadedList)) : self.fetchPosts();
-          self.fetchPosts();
         });
     },
 

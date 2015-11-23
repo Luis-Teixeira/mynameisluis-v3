@@ -1,10 +1,14 @@
 import Reflux from 'reflux';
 import request from 'superagent';
 import _ from 'lodash';
+import timeDifference from '../utils/TimeDifference'
+
 
 const localStorageKey = 'about',
+      localStorageDateKey = 'post-date',
       apiUrl = '/wp-json/wp/v2',
-      endPoint = '/pages?filter[name]=about-me';
+      endPoint = '/pages?filter[name]=about-me',
+      loadEvery = appConfig.loadDataEvery;
 
 const AboutStore = Reflux.createStore({
 
@@ -20,16 +24,21 @@ const AboutStore = Reflux.createStore({
   getInitialState() {
 
     let loadedList = localStorage.getItem(localStorageKey);
+    let oldDate = localStorage.getItem(localStorageDateKey);
+
+    if( !oldDate || oldDate === 'undefined') {
+      localStorage.setItem(localStorageDateKey,appConfig.time);
+    }
+
+    //console.log('--->', appConfig.loadDataEvery);
+    let oldDateObj = new Date(oldDate);
 
     //console.log('local (há? )->' , loadedList  );
-    if (!loadedList || loadedList === 'undefined') {
+    if (!loadedList || loadedList === 'undefined' || timeDifference.daysDifference( new Date(), oldDateObj) > loadEvery) {
+      localStorage.setItem(localStorageDateKey,appConfig.time);
       this.fetchPage();
     } else {
-      //this.trigger(this.page);
-      //JUST FOR DEBUG
-      this.fetchPage(); //
       this.updateList(JSON.parse(loadedList));
-      //this.compareLatestsID();
     }
     //console.log('local else ->', this.page);
     return this.page;

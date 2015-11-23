@@ -17,7 +17,6 @@ const App = React.createClass({
 
   render: function()  {
     let key = '';//(this.props.location.pathname.split("/")[1] === '' || this.props.location.pathname.split("/")[1] === 'portfolio') ? '' : this.props.location.pathname.split("/")[1];
-    console.log(key);
     return (
       <div className="app">
         <Header />
