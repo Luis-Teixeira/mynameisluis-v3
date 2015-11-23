@@ -1,6 +1,6 @@
 {
   "name": "mynameisluis-v3",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Luis-Teixeira/mynameisluis-v3.git"
@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/Luis-Teixeira/mynameisluis-v3"
   },
-  "homepage": "https://github.com/Luis-Teixeira/mynameisluis-v3#readme",
+  "homepage": "http://v3.mynameisluis.com/",
   "devDependencies": {
     "babelify": "^6.3.0",
     "bootstrap-sass": "^3.3.5",
@@ -47,9 +47,9 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.4.0"
   },
-  "description": "WP API Studie ==============",
+  "description": "My Name Is Luis ( Version 3 ) - My Personal Website",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "test"
+    "build": "build"
   }
 }
