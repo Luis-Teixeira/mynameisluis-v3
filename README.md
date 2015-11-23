@@ -55,7 +55,5 @@ $ gulp build
 
 optinal (but is essencial to create a custom post type 'portfolio')
 
-[Custom Post Type UI](https://github.com/WebDevStudios/custom-post-type-ui/)
-
-	- for creating custom post types, in this case 'portfolio'
+[Custom Post Type UI](https://github.com/WebDevStudios/custom-post-type-ui/) - for creating custom post types, in this case 'portfolio'
 
