@@ -44,12 +44,18 @@ $ gulp build
 
 ### Wordpress Plugins Required 
 
-[WP REST API](http://v2.wp-api.org/)\
-[ACF](http://www.advancedcustomfields.com/)\
-[ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/)\
+[WP REST API](http://v2.wp-api.org/)
+
+[ACF](http://www.advancedcustomfields.com/)
+
+[ACF to WP API](https://wordpress.org/plugins/acf-to-wp-api/)
+
 [Gravity Forms](http://www.gravityforms.com/)
 
-optinal (but is essencial to create a custom post type 'portfolio')\
+
+optinal (but is essencial to create a custom post type 'portfolio')
+
 [Custom Post Type UI](https://github.com/WebDevStudios/custom-post-type-ui/)
+
 	- for creating custom post types, in this case 'portfolio'
 
