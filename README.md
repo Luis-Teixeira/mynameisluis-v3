@@ -3,7 +3,7 @@ MyNameIsLuis - v3 aka MNSL
 ==============
 
 MNSL is the wordpress theme for my portfolio.
-It has the main feature to use [React](http://facebook.github.io/react/) and [WP-API](http://wp-api.org/).
+It's main feature is to use [React](http://facebook.github.io/react/) and [WP-API](http://wp-api.org/).
 
 
 
@@ -42,7 +42,7 @@ distrubution task (compress scss, minify css, autoprefix, uglify, ect)
 $ gulp build
 ```
 
-### Wordpress Plugins Required 
+### Wordpress Plugins Required
 
 [WP REST API](http://v2.wp-api.org/)
 
