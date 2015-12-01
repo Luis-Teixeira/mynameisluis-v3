@@ -394,7 +394,7 @@ mark,
 .text-left, .who-name {
   text-align: left; }
 
-.text-right, .Header .nav {
+.text-right, .Header .nav, .mentions {
   text-align: right; }
 
 .text-center, .AboutSectionHP .the-content, .info-links, .Aboutme .the-aboutme-links, .Facts, .SinglePost-footer .btn, .Form, .Form .bt-send-it,
@@ -3303,7 +3303,7 @@ input[type="button"].btn-block {
 .bg-gray-lighter, .Header, .AboutSectionHP, .Post, .Aboutme .avatar {
   background-color: #ECEAEA; }
 
-.brand-primary, .SinglePost-footer .btn {
+.brand-primary, .SinglePost-warper .btn-primary:active:focus, .SinglePost-footer .btn {
   color: #1C95B6; }
 
 .bg-brand-primary, .form-bg-fx {
@@ -3667,7 +3667,8 @@ body {
   display: none;
   top: 0;
   min-height: 100vh;
-  transform: translateY(100vh) scale(0.9); }
+  transform: translateY(100vh) scale(0.9);
+  z-index: 1; }
   .SinglePost-warper.inited {
     display: block; }
   .SinglePost-warper.in {
@@ -3675,6 +3676,9 @@ body {
   .SinglePost-warper .close-btn {
     top: 6px;
     left: 4px; }
+  .SinglePost-warper .btn-primary:active:focus {
+    background-color: transparent;
+    border: none; }
 
 .SinglePost-footer {
   opacity: 0; }
@@ -3687,8 +3691,14 @@ body {
     .SinglePost-footer .btn:hover {
       width: 190px; }
 
+.mentions {
+  font-size: 12px; }
+
 .the-role-loop {
   border-left: 4px solid #1C95B6; }
+
+.loop-images .image {
+  border: 1px solid rgba(0, 0, 0, 0.05); }
 
 .happy-message {
   opacity: 0; }

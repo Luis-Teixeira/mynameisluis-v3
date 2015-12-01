@@ -37,6 +37,7 @@ const AboutStore = Reflux.createStore({
     if (!loadedList || loadedList === 'undefined' || timeDifference.daysDifference( new Date(), oldDateObj) > loadEvery) {
       localStorage.setItem(localStorageDateKey,appConfig.time);
       this.fetchPage();
+      this.updateList(JSON.parse(loadedList));
     } else {
       this.updateList(JSON.parse(loadedList));
     }

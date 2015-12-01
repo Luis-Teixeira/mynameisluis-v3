@@ -115,14 +115,15 @@ const SinglePost = React.createClass({
                 </div>
               </div>
             </div>
-            <div className="loop-images margin-t-60 margin-b-60">
+            <div className="loop-images margin-t-60 margin-b-10">
 
                {
                  acf.images ? acf.images.map(function(image , i){
                    let imageKey = 'image-'+i;
+                   //console.log(image.image.sizes.large);
                    return (
                       <LazyLoad  key={imageKey} once ref="LazyLoad">
-                        <ImageLoader className="project-image" imageSrc={image.image.sizes.large}/>
+                        <ImageLoader className="project-image" imageSrc={image.image.url}/>
                       </LazyLoad>
                   )
                  }) : ''
@@ -133,6 +134,9 @@ const SinglePost = React.createClass({
           </div>
           : <div />
         }
+        <div className="container mentions">
+          <span dangerouslySetInnerHTML={{__html: acf.mention }} />
+        </div>
         <div className="SinglePost-footer text-center">
           <Link to={`/`} className="btn" onClick={this.goBack}>Back to Work</Link>
         </div>

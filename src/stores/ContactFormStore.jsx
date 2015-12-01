@@ -46,8 +46,9 @@ const ContactFormStore = Reflux.createStore({
     // //console.log('local (há? )->' , loadedList  );
     if (!loadedList || loadedList === 'undefined' || timeDifference.daysDifference( new Date(), oldDateObj) > loadEvery) {
 
-      this.fetchContactForm();
       localStorage.setItem(localStorageDateKey,appConfig.time);
+      this.updateList(JSON.parse(loadedList));
+      this.fetchContactForm();
 
     } else {
       this.updateList(JSON.parse(loadedList));

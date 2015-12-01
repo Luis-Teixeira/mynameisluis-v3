@@ -22,18 +22,19 @@ class Post extends React.Component {
     //console.log(prevProps, nextProps);
   }
 
-  imageLoaded(){
+  imageLoadedCB(){
+
     this.state.ImageLoaded = true;
   }
 
   render() {
-
+    //console.log('render ', this.state);
     let fetchedData = this.props.data;
     let acf = fetchedData.acf;
     //console.log(acf.imagem_destaque);
     let classNames = cx({
       'Post': true,
-      'Post_init' : this.state.ImageLoaded
+      'Post_init' : true//this.state.ImageLoaded
       // 'active': this.state.activatedPost,
       // 'Post-animate': this.state.animateThis,
     });
@@ -42,7 +43,7 @@ class Post extends React.Component {
       <LazyLoad  ref="LazyLoad">
         <article className="col-md-6">
           <div className={classNames}>
-            <ImageLoader imageSrc={acf.imagem_destaque.sizes.medium} onLoaded={this.imageLoaded(this)}/>
+            <ImageLoader imageSrc={acf.imagem_destaque.sizes.medium} onLoaded={this.imageLoadedCB()}/>
             <div className="Post_link ">
               <Link to={`/portfolio/${fetchedData.slug}`}> {fetchedData.title.rendered}</Link>
             </div>

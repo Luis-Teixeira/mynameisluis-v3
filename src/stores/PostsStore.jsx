@@ -7,8 +7,9 @@ import timeDifference from '../utils/TimeDifference'
 const localStorageKey = 'posts',
       localStorageDateKey = 'post-date',
       apiUrl = '/wp-json/wp/v2',
-      endPoint = '/portfolio',
-      loadEvery = appConfig.loadDataEvery;
+      endPoint = '/portfolio?per_page=12',
+      loadEvery = appConfig.loadDataEvery,
+      force = true;
 
 function getPostByKey(posts,postKey){
   return _.find(posts, function(post) {
@@ -30,16 +31,17 @@ var PostsStore = Reflux.createStore ({
       if( !oldDate || oldDate === 'undefined') {
         localStorage.setItem(localStorageDateKey,appConfig.time);
       }
-      //console.log('--->', appConfig.loadDataEvery);
+
       let oldDateObj = new Date(oldDate);
+      //console.log('--->', timeDifference.daysDifference( new Date(), oldDateObj) > loadEvery);
 
       if (!loadedList || loadedList === 'undefined' || timeDifference.daysDifference( new Date(), oldDateObj) > loadEvery) {
 
         localStorage.setItem(localStorageDateKey,appConfig.time);
+        this.updateList(JSON.parse(loadedList));
         this.fetchPosts();
       } else {
         this.updateList(JSON.parse(loadedList));
-        //this.compareLatestsID();
       }
       //console.log('local else ->', this.posts);
       return this.posts;
@@ -47,6 +49,7 @@ var PostsStore = Reflux.createStore ({
 
     fetchPostDetailBySlug(postKey) {
       let foundPost = getPostByKey(this.posts,postKey);
+      //console.log('aqio' , postKey , this.posts, foundPost);
       if (!foundPost) {
           return;
       }
@@ -64,9 +67,11 @@ var PostsStore = Reflux.createStore ({
     },
 
     updateList(posts){
+
         localStorage.setItem(localStorageKey,JSON.stringify(posts));
         // if we used a real database, we would likely do the below in a callback
         this.posts = posts;
+
         this.trigger(posts); // sends the updated list to all listening components
     }
 

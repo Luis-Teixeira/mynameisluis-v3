@@ -105,7 +105,7 @@ class Footer extends React.Component {
               <img className="img-responsive" src={appConfig.themeURL+"/images/mnsl-v3-white.svg"} />
             </div>
             <div className="info-links">
-              <p>Handcode be me with love</p>
+              <p>Handcode by me with love</p>
               <p><small>This project was impossible without</small></p>
               <div className="links-warpers">
                 <a className="footer-icon-btn" href="https://facebook.github.io/react/" title="" target='_blank'><i className="icon-react"></i></a>
