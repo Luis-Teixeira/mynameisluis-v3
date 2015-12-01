@@ -85,8 +85,13 @@ const Homepage = React.createClass({
         <Helmet
           title={appConfig.wordpressName}
           meta={[
-            {"name": "description", "content": "Helmet application"}//,
-            //{"property": "og:type", "content": "article"}
+            {"name": "description", "content": "My Name Is Luis - All about me and my work"},
+            {"property": "og:description", "content": "My Name Is Luis - All about me and my work"},
+            {"property": "og:type", "content": "website"},
+            {"property": "og:title", "content": appConfig.wordpressName},
+            {"property": "og:url", "content": appConfig.siteURL},
+            {"property": "og:image", "content": appConfig.themeURL+"/images/mnslv3.png"},
+            {"property": "og:site_name","content": appConfig.wordpressName},
           ]}
           link={[
             //{"rel": "canonical", "href": "http://mysite.com/example"},

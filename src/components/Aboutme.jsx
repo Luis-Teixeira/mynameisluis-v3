@@ -11,17 +11,33 @@ const Aboutme = React.createClass({
   render: function() {
     let key = '',
         content = '',
-        avatar = '';
+        avatar = '',
+        avatarBig = '',
+        linkMeta='';
 
     if(this.state.page) {
       key = this.state.page[0].id;
       content = this.state.page[0].acf.resume;
       avatar = this.state.page[0].acf.avatar.sizes.thumbnail;
+      avatarBig = this.state.page[0].acf.avatar.url;
+      linkMeta = this.state.page[0].link;
+      //console.log(this.state.page[0]);
     }
     //console.log(this.state.page[0].acf.avatar);
     return (
       <section className="Aboutme">
-        <Helmet title={' About Me | MNSL | '+ appConfig.wordpressName} />
+        <Helmet
+          title={' About Me | MNSL | '+ appConfig.wordpressName}
+          meta={[
+            {"name": "description", "content": content},
+            {"property": "og:title", "content": ' About Me | MNSL | '+ appConfig.wordpressName},
+            {"property": "og:description", "content": content},
+            {"property": "og:type", "content": "article"},
+            {"property": "og:url", "content": linkMeta},
+            {"property": "og:image", "content": avatarBig},
+            {"property": "og:site_name","content": appConfig.wordpressName},
+          ]}
+        />
 
         <div className="container">
           <div className="col-md-8 col-md-push-2 margin-t-60 margin-b-60">

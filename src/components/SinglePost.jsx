@@ -81,10 +81,21 @@ const SinglePost = React.createClass({
   render() {
     let fetchedData = this.state.fetchedData;
     let acf = fetchedData.acf;
-//    console.log(acf);
+    //console.log(fetchedData);
     return (
       <article className="SinglePost">
-        <Helmet title={fetchedData.title.rendered+' | '+ appConfig.wordpressName} />
+        <Helmet
+          title={fetchedData.title.rendered+' | '+ appConfig.wordpressName}
+           meta={[
+            {"name": "description", "content": content},
+            {"property": "og:title", "content": fetchedData.title.rendered+' | '+ appConfig.wordpressName},
+            {"property": "og:description", "content": content},
+            {"property": "og:type", "content": "article"},
+            {"property": "og:url", "content": fetchedData.link},
+            {"property": "og:image", "content": acf.imagem_banner.url},
+            {"property": "og:site_name","content": appConfig.wordpressName},
+          ]}
+          />
 
         {
           this.state.isVisible ?
