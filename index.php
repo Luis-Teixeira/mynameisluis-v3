@@ -10,7 +10,7 @@
 	<meta property="og:type" content="article" >
 	<meta property="og:title" content="My Name Is Luis" >
 	<meta property="og:url" content="http://v3.mynameisluis.com" >
-	<meta property="og:image" content="http://v3.mynameisluis.com/wp-content/themes/mnslv3/images/mnslv3.png" >
+	<meta property="og:image" content="http://v3.mynameisluis.com/wp-content/themes/mnslv3/images/share.png" >
 	<meta property="og:site_name" content="My Name Is Luis" >
 	<meta property="fb:app_id" content="1073930582657999">
 	<meta charset="UTF-8">
