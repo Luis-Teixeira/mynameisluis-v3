@@ -80,7 +80,7 @@ class Footer extends React.Component {
                 Say Hi! It's free
               </div>
               <div className="Form-title-subtitle text-uppercase">
-                <small>(dont by shy if want to work together or if want to buy me a some beer)</small>
+                <small>(don't be shy if you want to work together or if want to buy me a beer)</small>
               </div>
               <div className="position-rel1">
                 <button type="button" className="form-trigger btn btn-primary text-uppercase" ref="formTrigger" onClick={this.showFormPop} >start here</button>

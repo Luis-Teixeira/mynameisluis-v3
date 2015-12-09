@@ -5,12 +5,12 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="description" content="My Name Is Luis - All about me and my work" >
-	<meta property="og:description" content="My Name Is Luis - All about me and my work" >
+	<meta name="description" content="My Name Is Luis - Is all about me and my work" >
+	<meta property="og:description" content="My Name Is Luis - Is all about me and my work" >
 	<meta property="og:type" content="article" >
 	<meta property="og:title" content="My Name Is Luis" >
-	<meta property="og:url" content="http://v3.mynameisluis.com" >
-	<meta property="og:image" content="http://v3.mynameisluis.com/wp-content/themes/mnslv3/images/share.png" >
+	<meta property="og:url" content="<?php echo site_url() ?>" >
+	<meta property="og:image" content="<?php echo site_url() ?>/wp-content/themes/mnslv3/images/share.png" >
 	<meta property="og:site_name" content="My Name Is Luis" >
 	<meta property="fb:app_id" content="1073930582657999">
 	<meta charset="UTF-8">
@@ -35,6 +35,19 @@
 	</div><!-- #content -->
 
 </div><!-- #page -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38333259-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
 <?php wp_footer(); ?>
 
 </body>

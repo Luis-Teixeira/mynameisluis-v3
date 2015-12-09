@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/Luis-Teixeira/mynameisluis-v3"
   },
-  "homepage": "http://v3.mynameisluis.com/",
+  "homepage": "http://www.mynameisluis.com/",
   "devDependencies": {
     "babelify": "^6.3.0",
     "bootstrap-sass": "^3.3.5",
